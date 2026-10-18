@@ -1,0 +1,142 @@
+{
+ "generado": "2026-10-18T18:26:37.110Z",
+ "ultima": "1.7.0",
+ "versiones": [
+  {
+   "version": "1.7.0",
+   "destacados": [
+    "Extreme Networks EXOS: modelo y número de serie",
+    "pfSense y OPNsense",
+    "Alpine Linux",
+    "¿El equipo tiene interfaz web?"
+   ],
+   "html": "<ul><li><strong>Extreme Networks EXOS: modelo y número de serie</strong>. El número de serie no se leía cuando la línea «Switch : …» de <code>show version</code> trae varios espacios (como en la máquina virtual de GNS3), y el modelo no aparece en <code>show version</code>: ahora el inventario ejecuta también <code>show switch</code> y toma el modelo de «System Type». La serie de los equipos ya respaldados se corrige sola al reiniciar; el modelo aparece en el próximo respaldo.</li><li><strong>pfSense y OPNsense</strong>: perfiles propios. OpenNCCM entra por SSH, atraviesa el menú de consola (opción «8) Shell») y respalda el <code>config.xml</code> completo, con historial, comparación, alertas y cumplimiento como cualquier otro equipo. El inventario trae versión, modelo y número de serie. Use el usuario <code>admin</code>/<code>root</code>.</li><li><strong>Alpine Linux</strong>: perfil propio que respalda red, DNS, paquetes instalados (<code>apk world</code>), servicios, SSH y cortafuegos (iptables / nftables), con versión, modelo y serie en el inventario.</li><li><strong>¿El equipo tiene interfaz web?</strong>: al crear o editar un equipo se elige si tiene página de administración. Con «No» se oculta el botón 🌐 (en la lista y en la ficha); con «Sí» se puede indicar su dirección si no es <code>https://IP/</code>. Los equipos existentes siguen mostrando el botón.</li><li>Los comandos de inventario de un perfil pueden ser varios (se muestran como «show version + show switch»).</li></ul>",
+   "fecha": "2026-10-18T16:51:55Z"
+  },
+  {
+   "version": "1.6.2",
+   "destacados": [
+    "Corrección: actualizar desde la web",
+    "Extreme VOSS",
+    "Cinco temas nuevos",
+    "Legibilidad en temas oscuros"
+   ],
+   "html": "<ul><li><strong>Corrección: actualizar desde la web</strong>. El botón «Actualizar» fallaba con «fatal: $HOME not set» (el servicio de systemd que ejecuta la actualización no tenía definida la variable HOME que necesita git). Ahora el servicio define HOME y PATH, y el comando <code>opennccm</code> también lo hace por su cuenta. La página de progreso muestra claramente si la actualización falló o si ya estaba al día, en lugar de quedarse en «Preparando la actualización». <strong>Importante:</strong> esta corrección se instala con la propia actualización, así que para pasar a la 1.6.2 hay que usar una vez más <code>sudo opennccm update</code> en la consola; desde la 1.6.2 el botón funciona.</li><li><strong>Extreme VOSS</strong>: ya no se registra un cambio en cada respaldo por las líneas «Command Execution Time: …» y «# &lt;fecha y hora&gt;» que el equipo agrega al mostrar la configuración (el primer respaldo tras actualizar guarda una versión sin esas líneas).</li><li><strong>Cinco temas nuevos</strong>: Arena, Océano, Atardecer, Lavanda y Grafito.</li><li><strong>Legibilidad en temas oscuros</strong>: los números de colores del panel (respaldos OK, errores, alarmas…) y los conteos +/− de líneas usan tonos claros en los temas oscuros. Los 10 temas cumplen el contraste WCAG 2.1 AA (prueba automática).</li></ul>",
+   "fecha": "2026-10-18T04:16:21Z"
+  },
+  {
+   "version": "1.6.1",
+   "destacados": [
+    "Consola en su propia ventana",
+    "Interfaz web del equipo",
+    "Panel",
+    "Eventos del equipo"
+   ],
+   "html": "<ul><li><strong>Consola en su propia ventana</strong>: se abre en una ventana aparte del navegador (1000 × 640, centrada) que el usuario puede agrandar o achicar; el terminal ocupa toda la ventana y se adapta al tamaño.</li><li><strong>Interfaz web del equipo</strong>: icono 🌐 junto al de la consola y botón «🌐 Interfaz web» en cada equipo; abre su página de administración en una ventana aparte. Por omisión <code>https://IP/</code>; se puede indicar otra URL al editar el equipo.</li><li><strong>Panel</strong>: más espacio entre los indicadores y las gráficas de CPU y memoria; «Últimos cambios» y «Eventos recientes» muestran 10 elementos, 6 a la vista y el resto con barra de desplazamiento.</li><li><strong>Eventos del equipo</strong>: 3 a la vista y el resto con barra de desplazamiento, en lugar de una lista muy larga.</li><li><strong>Sistema → Actualizaciones</strong>: ventana «Novedades de cada versión» (historial de cambios y novedades de la versión nueva) y enlace a todas las versiones en GitHub; el aviso de actualización también enlaza a las novedades en GitHub.</li><li><strong>Extreme Networks VOSS (VSP) y ERS</strong>: el inventario usa <code>show sys-info</code> (VOSS no tiene <code>show version</code>), así que ahora se completan el modelo, el número de serie y la versión de firmware.</li></ul>",
+   "fecha": "2026-10-18T02:53:04Z"
+  },
+  {
+   "version": "1.6.0",
+   "destacados": [
+    "Consola SSH web",
+    "Rendimiento del servidor en el Panel",
+    "Actualizar desde la web",
+    "Editar tareas programadas"
+   ],
+   "html": "<ul><li><strong>Consola SSH web</strong>: icono ⌨ en la lista de equipos (después de «Estado») y botón «⌨ Consola» en cada equipo; abre un terminal en el navegador (xterm.js, incluido en el proyecto) conectado al equipo. Pide usuario y contraseña, o inicia sesión automáticamente con la credencial del equipo si el administrador lo permite en Ajustes (desactivado por omisión). Por omisión solo para administradores; cierre por inactividad (15 min); cada sesión queda en Auditoría.</li><li><strong>Rendimiento del servidor en el Panel</strong> (administradores): CPU, carga, memoria, swap, disco usado/libre/total, espacio de los datos, tiempo encendido y gráficas de CPU y memoria de las últimas 24 h.</li><li><strong>Actualizar desde la web</strong>: tarjeta «Actualizaciones» en Sistema (buscar ahora / actualizar con progreso en pantalla) y aviso emergente a los administradores cuando hay una versión nueva. Usa el mismo «opennccm update» (copia previa y vuelta atrás automática) a través de un servicio de systemd; la aplicación sigue sin privilegios de root.</li><li><strong>Editar tareas programadas</strong>: botón «Editar» que abre el asistente con los valores de la tarea.</li><li><strong>Guardar la contraseña en el navegador</strong>: el instalador crea una autoridad certificadora propia, restringida a este servidor, y firma con ella el certificado HTTPS. Instalándola una vez en el PC (página «Certificado» enlazada desde el login) desaparece el aviso «No es seguro» y el navegador ofrece guardar usuario y contraseña. Las instalaciones existentes migran al actualizar.</li><li><strong>Seguridad</strong>:<ul><li>verificación en dos pasos (TOTP con app de autenticación), opcional por usuario y exigible a los administradores; <code>sudo opennccm reset-2fa USUARIO</code> para quien pierda el teléfono;</li><li>bloqueo de la cuenta 15 min tras 5 contraseñas incorrectas (además del bloqueo por IP);</li><li>cierre de sesión por inactividad (30 min, configurable) y al cambiar la contraseña en las demás sesiones;</li><li>contraseñas: mínimo 10 caracteres con letras y números, sin el nombre de usuario; PBKDF2-SHA256 con 600 000 iteraciones (las existentes se reprotegen al ingresar);</li><li>cookie de sesión solo por HTTPS; cabeceras CSP, X-Frame-Options, nosniff, Referrer-Policy y sin caché en las páginas;</li><li>copias de recuperación que incluyen la clave de cifrado: el archivo se cifra con una contraseña (AES-256-GCM);</li><li>permisos estrictos de la clave, la base de datos y el archivo de configuración.</li></ul></li><li><strong>Privacidad, cookies y licencias</strong>: página pública con los datos que guarda OpenNCCM, conexiones externas, la única cookie (técnica, sin necesidad de consentimiento), condiciones de uso, licencias de terceros y datos de la organización responsable (nuevos campos en Ajustes).</li><li><strong>Accesibilidad</strong>: etiquetas asociadas a los campos, nombres accesibles en botones de icono, enlace «Saltar al contenido», foco visible con teclado, gráficas con descripción, y colores corregidos para cumplir el contraste WCAG 2.1 AA en los 6 temas (prueba automática).</li><li><strong>nginx</strong>: soporte de WebSocket (consola) y conservación del certificado de Let's Encrypt al actualizar.</li><li><strong>Corrección</strong>: un segundo aviso de cambio por syslog del mismo equipo dentro del mismo minuto se descartaba, y ese segundo cambio podía quedar sin respaldar hasta la siguiente tarea programada. Ahora se agrupa en un respaldo adicional.</li></ul>",
+   "fecha": "2026-10-17T18:05:10Z"
+  },
+  {
+   "version": "1.5.0",
+   "destacados": [
+    "Errores de todos los fabricantes",
+    "Un comando a la vez en todas las plataformas",
+    "Sin falsos cambios",
+    "Reversión más segura en Cisco, Huawei y similares"
+   ],
+   "html": "<p>Lo aprendido con el Ubiquiti EdgeSwitch, revisado y aplicado a todas las marcas:</p><ul><li><strong>Errores de todos los fabricantes</strong>: se reconocen los mensajes de rechazo de Cisco/Arista/Dell/Allied/Extreme, HP Comware/Mellanox/A10, Huawei, Juniper, MikroTik, FortiGate, Palo Alto, Nokia, IOS-XR, VyOS/EdgeRouter, Check Point y Broadcom FastPath. Antes algunos (p. ej. MikroTik o FortiGate) podían quedar como «OK».</li><li><strong>Un comando a la vez en todas las plataformas</strong>: al primer comando rechazado se detiene, no guarda (ni hace commit) y dice qué comando falló y cuáles se aplicaron. En plataformas con commit (Junos, IOS-XR, VyOS, EdgeRouter, Huawei VRP8, Nokia SRL, PAN-OS) descarta los cambios pendientes. Si un comando pide confirmación («[confirm]», «(y/n)»), no se responde: se detiene y lo informa.</li><li><strong>Sin falsos cambios</strong>: se quitan en todas las plataformas las líneas con fecha/hora o contadores (MikroTik, Junos, Huawei, Nokia, Check Point, Arista, ASA, Mellanox, Dell/Netgear...). En FortiGate, las contraseñas que el equipo vuelve a cifrar en cada lectura («ENC ...») ya no generan una versión nueva (se guardan tal cual).</li><li><strong>Reversión más segura en Cisco, Huawei y similares</strong>: los ajustes de un solo valor (descripción, IP, VLAN de acceso o permitidas, hostname, usuario) se reescriben sin negarlos antes (un «no ip address» en la interfaz de gestión cortaba la conexión); las VLAN nuevas se crean primero y las que sobran se borran al final; en Huawei, <code>vlan batch</code> se compara como conjunto.</li><li><strong>Estilo FastPath detectado automáticamente</strong>: Dell N-series (OS6/PowerConnect), Netgear, Broadcom ICOS, Quanta y UniFi Switch usan bloques cerrados con <code>exit</code> sin sangría; su reversión ahora usa las mismas reglas que el EdgeSwitch.</li><li><strong>Respaldos incompletos</strong>: además de «--More--», se rechaza una configuración estilo FastPath sin su <code>exit</code> final y una de Cisco IOS/XE, Arista o ASA sin su <code>end</code> final.</li><li><strong>Modo usuario sin enable</strong>: si un equipo (Cisco y similares) entra en modo «&gt;» y la credencial no tiene contraseña de enable, se prueba la de ingreso; si no sirve, el error dice en qué credencial escribirla.</li></ul>",
+   "fecha": "2026-10-16T16:32:18Z"
+  },
+  {
+   "version": "1.4.2",
+   "destacados": [
+    "Errores del EdgeSwitch detectados",
+    "EdgeSwitch: un comando a la vez",
+    "Respaldo tras un cambio fallido",
+    "Reversión FastPath en el orden correcto"
+   ],
+   "html": "<ul><li><strong>Errores del EdgeSwitch detectados</strong>: las respuestas «Failed to set VLAN participation…», «An invalid…» y similares ahora marcan la solicitud como fallida. Antes se mostraba «OK» y se ejecutaba <code>write memory</code> igualmente.</li><li><strong>EdgeSwitch: un comando a la vez</strong>: los cambios se envían de uno en uno; al primer comando rechazado se detiene, no guarda la configuración y el informe indica qué comando falló y cuáles ya se aplicaron.</li><li><strong>Respaldo tras un cambio fallido</strong>: si un cambio falla a mitad, se respalda el equipo para registrar su estado real.</li><li><strong>Reversión FastPath en el orden correcto</strong>: primero crea las VLAN que faltan, luego ajusta los puertos y al final borra las VLAN que sobran. Ya no intenta sacar los puertos de una VLAN que se va a borrar (desaparecen con ella). Antes borraba la VLAN primero y luego fallaba «vlan participation auto» en cada puerto.</li><li><strong>Versiones incompletas bloqueadas</strong>: revertir a una versión con menos de la mitad del tamaño de la actual (un respaldo cortado) ya no se ofrece con el botón normal; la página explica el riesgo y pide confirmación explícita.</li></ul>",
+   "fecha": "2026-10-16T15:14:02Z"
+  },
+  {
+   "version": "1.4.1",
+   "destacados": [
+    "Inventario al actualizar"
+   ],
+   "html": "<ul><li><strong>Inventario al actualizar</strong>: al iniciar, OpenNCCM relee la última salida de inventario guardada de cada equipo con el lector actual. Así el modelo, el número de serie y el firmware de equipos ya respaldados (p. ej. un Ubiquiti EdgeSwitch respaldado antes de la 1.4.0, con la serie como «......») se corrigen solos, sin esperar al próximo respaldo.</li></ul>",
+   "fecha": "2026-10-16T14:12:47Z"
+  },
+  {
+   "version": "1.4.0",
+   "destacados": [
+    "Tareas programadas sin cron",
+    "Corrección",
+    "Aprobación propia",
+    "Ubiquiti EdgeSwitch"
+   ],
+   "html": "<ul><li><strong>Tareas programadas sin cron</strong>: se elige la frecuencia (todos los días, algunos días de la semana, una vez al mes, cada hora, cada pocos minutos) con hora y días en desplegables, y se ve en palabras («Cada lunes y jueves a las 02:30») antes de crearla y en la tabla. El cron sigue disponible en «Avanzado».</li><li><strong>Corrección</strong>: en cron, el día de la semana <code>1</code> se ejecutaba el martes en lugar del lunes (y <code>0</code> el lunes en lugar del domingo). Ahora se usa el estándar de cron: 0 o 7 = domingo, 1 = lunes. Revise sus tareas con días numéricos.</li><li><strong>Aprobación propia</strong>: por defecto un administrador puede aprobar sus propias solicitudes (se puede desactivar en Ajustes).</li><li><strong>Ubiquiti EdgeSwitch</strong>:<ul><li>inventario: modelo, número de serie y firmware se leen bien (antes el número de serie aparecía como «......»); lo mismo para otros equipos con formato «Campo....... valor»;</li><li>los respaldos ya no marcan «+2 −2» en cada lectura (se ignoran el tiempo encendido y la hora SNTP);</li><li>reversión nueva para su sintaxis FastPath: <code>vlan database</code> y modo privilegiado fuera de <code>configure</code>, bloques con <code>exit</code>, ajustes de un solo valor reescritos en lugar de borrados, <code>vlan participation auto</code> y sin tocar la IP de gestión. Antes la reversión fallaba en estos switches.</li></ul></li><li><strong>Respaldos incompletos</strong>: una configuración cortada o paginada («--More--») ya no se guarda como versión; y al pedir una reversión a una versión mucho más pequeña que la actual se muestra una advertencia.</li><li><strong>Grupos más fáciles de encontrar</strong>: botón «Grupos» en Dispositivos, enlace «asignar grupo» en cada equipo y campo «…o crear un grupo nuevo» al editar un equipo.</li></ul>",
+   "fecha": "2026-10-16T13:37:29Z"
+  },
+  {
+   "version": "1.3.2",
+   "destacados": [
+    "Modo privilegiado (enable)"
+   ],
+   "html": "<ul><li><strong>Modo privilegiado (enable)</strong>: corrige «Failed to enter enable mode. Please ensure you pass the 'secret' argument to ConnectHandler» en equipos cuyo driver entra a enable al conectar (p. ej. Ubiquiti EdgeSwitch). Si la credencial no tiene contraseña de enable, OpenNCCM prueba automáticamente con la contraseña de ingreso (muy habitual en estos equipos). Si tampoco sirve, el error ahora explica en español qué falta y en qué credencial escribirlo; también avisa cuando la contraseña de enable configurada es incorrecta.</li></ul>",
+   "fecha": "2026-10-16T05:26:51Z"
+  },
+  {
+   "version": "1.3.1",
+   "destacados": [
+    "Equipos antiguos por SSH"
+   ],
+   "html": "<ul><li><strong>Equipos antiguos por SSH</strong>: corrige el error «no matching host key type found. Their offer: ssh-rsa» / «Incompatible ssh peer» al respaldar equipos como Ubiquiti EdgeSwitch, Cisco IOS 12.x o HP ProCurve antiguos. La librería SSH (Paramiko 5) dejó de incluir los algoritmos con SHA-1; OpenNCCM vuelve a aceptar <code>ssh-rsa</code>, <code>diffie-hellman-group14-sha1</code>, <code>diffie-hellman-group-exchange-sha1</code> y <code>diffie-hellman-group1-sha1</code>, siempre como <strong>última opción</strong>: los equipos modernos siguen negociando algoritmos modernos.</li><li>Pruebas automáticas nuevas: respaldo de un equipo simulado que solo ofrece esos algoritmos y conexión a un OpenSSH real configurado igual.</li></ul>",
+   "fecha": "2026-10-16T04:58:43Z"
+  },
+  {
+   "version": "1.3.0",
+   "destacados": [
+    "Usuarios",
+    "Cambiar mi contraseña",
+    "Temas",
+    "Icono"
+   ],
+   "html": "<ul><li><strong>Usuarios</strong>: crear y editar ahora son acciones separadas (botón «Editar» en cada fila). Antes, si el desplegable «Modificar existente» tenía un usuario elegido, se modificaba ese usuario en lugar de crear uno nuevo. Mensajes claros de lo que se hizo, confirmación de contraseña, nombres duplicados rechazados y protección para no quitarse a sí mismo el rol de administrador.</li><li><strong>Cambiar mi contraseña</strong>: botón 🔑 junto al nombre de usuario en la barra superior.</li><li><strong>Temas</strong>: Automático, Claro, Oscuro, Azul noche, Bosque y Alto contraste; cada usuario elige el suyo en «Mi cuenta».</li><li><strong>Icono</strong> de OpenNCCM en la pestaña del navegador y en la barra superior (también al guardar como acceso directo en el teléfono).</li><li><strong>Fecha y hora</strong> del servidor desde Sistema: zona horaria, sincronización NTP y fecha/hora manual. El servicio sigue sin privilegios de root: el instalador agrega una regla de polkit que permite solo esas tres acciones.</li><li><strong>Plataformas</strong>: enlace en el menú, buscador y filtro por fabricante, comandos de arranque e inventario, y columna «Comprobado en su red» que se marca sola cuando un equipo de esa plataforma hace su primer respaldo correcto.</li><li>Nuevo comando <code>sudo opennccm users</code> para listar usuarios desde la consola.</li></ul>",
+   "fecha": "2026-10-16T04:29:54Z"
+  },
+  {
+   "version": "1.2.1",
+   "destacados": [],
+   "html": "<ul><li>Corrección: con <code>curl … | sudo bash</code> el asistente con menús no recibía el teclado (Enter no respondía). Ahora el instalador lo detecta, no modifica nada y muestra el comando correcto.</li><li>La instalación guiada se hace descargando primero el instalador: <code>curl -fsSL …/install.sh -o install.sh &amp;&amp; sudo bash install.sh</code>. La forma <code>curl … | sudo bash -s -- --unattended</code> sigue siendo válida para instalar sin preguntas.</li><li>La prueba automática del asistente se ejecuta ahora como un usuario normal con sudo, igual que un administrador.</li><li>Corrección: si el respaldo posterior a un cambio aprobado no podía ejecutarse (equipo ocupado), la ventana de mantenimiento quedaba abierta y los avisos syslog se retrasaban hasta que expiraba.</li><li>El registro del servicio (<code>opennccm logs</code>) anota cada respaldo y cada decisión de reversión automática.</li></ul>",
+   "fecha": "2026-10-16T03:23:13Z"
+  },
+  {
+   "version": "1.2.0",
+   "destacados": [],
+   "html": "<ul><li>Instalación con un solo comando desde GitHub (<code>curl … | sudo bash</code>), con asistente de menús o desatendida.</li><li>El instalador comprueba el servidor (versión de Ubuntu, internet, disco, memoria, puertos) y actualiza Ubuntu e instala las dependencias que falten.</li><li>Nuevo comando <code>opennccm</code>: <code>update</code>, <code>rollback</code>, <code>status</code>, <code>backup</code>, <code>restore</code>, <code>logs</code>, <code>uninstall</code>…</li><li><code>opennccm update</code> instala la última versión publicada, guarda una copia previa y vuelve sola a la versión anterior si la nueva no arranca.</li><li>Opciones del asistente: dirección del servidor, zona horaria, HTTPS (autofirmado, Let's Encrypt o certificado propio), SQLite o PostgreSQL, cortafuegos, contraseña del administrador y correo.</li><li><code>/healthz</code> informa la versión y comprueba la base de datos.</li><li>Pruebas automáticas en Ubuntu 22.04 y 24.04 en cada cambio: aplicación, instalación, asistente, actualización y vuelta atrás.</li><li>Corrección: la reversión automática podía omitirse si un respaldo en curso había leído la configuración del equipo antes de activarla; ahora se vuelve a leer al decidir.</li></ul>",
+   "fecha": "2026-10-15T19:53:00Z"
+  },
+  {
+   "version": "1.1.0",
+   "destacados": [],
+   "html": "<ul><li>122 plataformas de unos 70 fabricantes (antes ~40) y perfil genérico con comando de respaldo personalizado.</li><li>Fin de venta / fin de soporte (EOL/EOS): base por modelo, CSV y API Cisco EoX.</li><li>Actualización remota de firmware (SCP + MD5 + arranque + reinicio) con aprobación.</li><li>Paquetes de cumplimiento PCI DSS 4.0, HIPAA, SOX y Cisco IOS.</li><li>Recuperación ante desastres: copias de la base, retención, SFTP y restauración.</li><li>Línea base por equipo con detección de desviación.</li><li>Comparación lado a lado.</li><li>Página de Análisis con gráficas, informes en pantalla y envío programado por correo.</li><li>Restricción de usuarios por grupos de dispositivos.</li><li>Actualizaciones: copia previa automática y <code>rollback-update.sh</code>; versión visible en la interfaz.</li><li>Correcciones: avisos syslog durante ventanas de mantenimiento se difieren en lugar de descartarse; la restauración ya no crea una base vacía antes de restaurar.</li></ul>",
+   "fecha": null
+  },
+  {
+   "version": "1.0.0",
+   "destacados": [],
+   "html": "<ul><li>Primera versión: respaldos, comparación, configlets, aprobación, reversión, cumplimiento, CVE, syslog, tareas, alarmas, auditoría, informes CSV.</li></ul>",
+   "fecha": null
+  }
+ ]
+}

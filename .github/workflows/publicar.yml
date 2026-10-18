@@ -1,0 +1,53 @@
+name: Publicar la web
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  # Trae las novedades y capturas del proyecto aunque nadie toque la web
+  schedule:
+    - cron: "17 */6 * * *"
+  # Aviso inmediato desde el repositorio de OpenNCCM al publicar una versión (opcional)
+  repository_dispatch:
+    types: [nueva-version]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  construir:
+    name: Construir
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Novedades y capturas desde Gaaraalex/opennccm
+        run: node scripts/build.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Comprobar enlaces internos
+        run: node scripts/comprobar.mjs
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  publicar:
+    name: Publicar en GitHub Pages
+    if: github.event_name != 'pull_request'
+    needs: construir
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - id: despliegue
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenNCCM · Respaldos y cumplimiento de red, en tu servidor</title>
+<meta name="description" content="OpenNCCM: gestión de configuración, cambios y cumplimiento de red (NCCM) de código abierto para Ubuntu Server. Respalda, compara y audita switches, routers y firewalls de unos 70 fabricantes. Libre y en español.">
+<meta name="theme-color" content="#0a0f1d">
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="OpenNCCM: respaldos, cambios y cumplimiento de tu red">
+<meta property="og:description" content="NCCM de código abierto para Ubuntu Server. 125 plataformas, comparación y vuelta atrás, cumplimiento PCI/HIPAA/SOX, consola SSH web. Libre y en español.">
+<meta property="og:image" content="img/capturas/hero.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<header class="barra" id="barra">
+  <div class="contenedor">
+    <a class="marca" href="./"><img src="img/icon.svg" alt="" width="30" height="30"><b>Open<span>NCCM</span></b></a>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#funciones">Funciones</a>
+      <a href="#capturas">Capturas</a>
+      <a href="#instalar">Instalar</a>
+      <a href="#fabricantes">Fabricantes</a>
+      <a href="novedades.html">Novedades</a>
+      <a href="#documentacion">Documentación</a>
+    </nav>
+    <a class="boton chico" href="https://github.com/Gaaraalex/opennccm">
+      <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      GitHub <span class="version-pill" data-version>v1.7.0</span>
+    </a>
+    <button class="abrir-menu" id="abrir-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="contenido">
+
+<section class="portada">
+  <div class="contenedor">
+    <div>
+      <a class="aviso-version" href="novedades.html"><b data-version>v1.7.0</b> <span data-destacado>pfSense, OPNsense y Alpine Linux</span> →</a>
+      <h1>Respaldos, cambios y cumplimiento de tu red, <em>en tu propio servidor</em>.</h1>
+      <p class="lema">OpenNCCM respalda, versiona, compara y audita switches, routers y firewalls de unos 70 fabricantes. Detecta los cambios en tiempo real y vuelve atrás cuando algo sale mal. Libre, gratuito y en español.</p>
+      <div class="acciones">
+        <a class="boton primario" href="#instalar">Instalar en Ubuntu</a>
+        <a class="boton" href="#capturas">Ver cómo se ve</a>
+      </div>
+      <ul class="chips">
+        <li>125 plataformas</li>
+        <li style="--c: var(--green)">Diff y vuelta atrás</li>
+        <li style="--c: var(--amber)">PCI · HIPAA · SOX</li>
+        <li style="--c: var(--green)">CVE y fin de vida</li>
+        <li>Consola SSH web</li>
+        <li style="--c: var(--amber)">Dos pasos (2FA)</li>
+      </ul>
+    </div>
+    <div class="escena" aria-hidden="true">
+      <img class="captura fondo" src="img/capturas/panel.png" alt="" width="1600" height="1000">
+      <img class="captura frente" src="img/capturas/diff.png" alt="" width="1600" height="1000">
+    </div>
+  </div>
+</section>
+
+<div class="cifras">
+  <ul class="contenedor">
+    <li><b>125</b><span>plataformas</span></li>
+    <li><b>~70</b><span>fabricantes</span></li>
+    <li><b>22.04 · 24.04</b><span>Ubuntu Server</span></li>
+    <li><b>10</b><span>temas de color</span></li>
+    <li><b>GPL-3.0</b><span>código abierto</span></li>
+  </ul>
+</div>
+
+<section id="capturas">
+  <div class="contenedor">
+    <div class="cabecera-seccion centrada">
+      <p class="eyebrow">Así se ve</p>
+      <h2>Toda la red, en una sola pantalla</h2>
+      <p class="intro">Una interfaz web clara, adaptable al teléfono y accesible, pensada para quien administra la red todos los días.</p>
+    </div>
+    <div class="galeria">
+      <div class="pestanas" role="tablist" aria-label="Capturas">
+        <button role="tab" aria-selected="true" data-img="panel" data-txt="<b>Panel de control</b>: el estado de toda la red de un vistazo y el rendimiento del propio servidor.">Panel</button>
+        <button role="tab" aria-selected="false" data-img="equipo" data-txt="<b>Inventario y versiones</b>: modelo, serie y firmware, con el historial completo de cada configuración.">Equipo</button>
+        <button role="tab" aria-selected="false" data-img="diff" data-txt="<b>Comparación lado a lado</b>: qué cambió, cuándo y quién, entre versiones o entre equipos distintos.">Comparación</button>
+        <button role="tab" aria-selected="false" data-img="consola" data-txt="<b>Consola SSH en el navegador</b>: entra al equipo sin instalar nada, en una ventana aparte y con auditoría.">Consola</button>
+        <button role="tab" aria-selected="false" data-img="cumplimiento" data-txt="<b>Cumplimiento</b>: PCI DSS, HIPAA, SOX y hardening, con corrección en un clic (y aprobación si se exige).">Cumplimiento</button>
+        <button role="tab" aria-selected="false" data-img="analisis" data-txt="<b>Análisis</b>: quién cambia más, por qué vía, qué cumple y qué firmware hay en la red.">Análisis</button>
+        <button role="tab" aria-selected="false" data-img="temas" data-txt="<b>10 temas de color</b> (más el automático), todos con contraste WCAG 2.1 AA.">Temas</button>
+      </div>
+      <figure role="tabpanel">
+        <img id="captura" src="img/capturas/panel.png" alt="Panel de control con el estado de la red y del servidor" width="1600" height="1000">
+        <figcaption id="captura-txt"><b>Panel de control</b>: el estado de toda la red de un vistazo y el rendimiento del propio servidor.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="funciones" class="alterna">
+  <div class="contenedor">
+    <div class="cabecera-seccion">
+      <p class="eyebrow">Qué hace</p>
+      <h2>Todo lo que espera de un NCCM, sin licencias</h2>
+      <p class="intro">Lo que ofrecen las herramientas comerciales de gestión de configuración de red, en un servidor suyo y con sus datos en casa.</p>
+    </div>
+    <div class="rejilla">
+      <article class="tarjeta"><div class="icono">💾</div><h3>Respaldos</h3><p>Manuales, programados y automáticos al detectar un cambio por syslog. Running y startup, cifrados con AES-256.</p></article>
+      <article class="tarjeta"><div class="icono">🔍</div><h3>Versiones y comparación</h3><p>Historial completo, etiquetas y línea base. Comparación lado a lado o unificada, entre versiones o entre equipos.</p></article>
+      <article class="tarjeta"><div class="icono">🛠️</div><h3>Cambios controlados</h3><p>Configlets con plantillas Jinja2 para cambios masivos, solicitudes con aprobación y reversión manual o automática.</p></article>
+      <article class="tarjeta"><div class="icono">🛡️</div><h3>Cumplimiento</h3><p>Políticas con reglas y corrección. Paquetes PCI DSS 4.0, HIPAA, SOX y hardening de Cisco IOS y Junos.</p></article>
+      <article class="tarjeta"><div class="icono">📦</div><h3>Firmware</h3><p>Repositorio de imágenes y actualización remota: SCP, verificación MD5, arranque y reinicio.</p></article>
+      <article class="tarjeta"><div class="icono">🚨</div><h3>Vulnerabilidades</h3><p>CVE del firmware de cada equipo (NVD) y fin de vida EOL/EOS, por CSV o con la API Cisco EoX.</p></article>
+      <article class="tarjeta"><div class="icono">🖥️</div><h3>Consola web</h3><p>SSH al equipo desde el navegador, en ventana aparte, con inicio de sesión automático opcional y auditoría.</p></article>
+      <article class="tarjeta"><div class="icono">⏰</div><h3>Operación diaria</h3><p>Tareas programadas sin escribir cron, alarmas por severidad y avisos por correo, Teams, Slack o Telegram.</p></article>
+      <article class="tarjeta"><div class="icono">📈</div><h3>Análisis e informes</h3><p>Gráficas, informes en pantalla, exportación a CSV y envío programado por correo.</p></article>
+      <article class="tarjeta"><div class="icono">🔐</div><h3>Acceso y seguridad</h3><p>Roles admin, operador y lector, grupos de equipos, verificación en dos pasos (TOTP) y auditoría completa.</p></article>
+      <article class="tarjeta"><div class="icono">🎨</div><h3>Interfaz cuidada</h3><p>10 temas más el automático, adaptable al teléfono y accesible, con contraste WCAG AA comprobado.</p></article>
+      <article class="tarjeta"><div class="icono">♻️</div><h3>Recuperación</h3><p>Copias cifradas de la base de datos, envío por SFTP, restauración y actualizaciones con vuelta atrás.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="instalar">
+  <div class="contenedor">
+    <div class="cabecera-seccion">
+      <p class="eyebrow">Instalación</p>
+      <h2>Funcionando en unos minutos</h2>
+      <p class="intro">En un Ubuntu Server 22.04 o 24.04 recién instalado, un único comando abre un asistente con menús que lo hace todo.</p>
+    </div>
+    <div class="instalar">
+      <ol class="pasos">
+        <li><div><h3>Prepare un Ubuntu Server</h3><p>22.04 o 24.04 LTS, físico o virtual. Con 2 vCPU y 4 GB de RAM alcanza para 300 equipos.</p></div></li>
+        <li><div><h3>Ejecute el instalador</h3><p>Comprueba el servidor, actualiza Ubuntu e instala lo que falte. Pregunta la dirección, la zona horaria, el tipo de HTTPS, la base de datos, el cortafuegos y la contraseña del administrador.</p></div></li>
+        <li><div><h3>Abra la web</h3><p>Al terminar muestra la dirección y las credenciales. Instale la autoridad de <code>https://SERVIDOR/certificado</code> en su PC y el navegador dejará de mostrar avisos.</p></div></li>
+        <li><div><h3>Actualice con un clic</h3><p>Desde <b>Sistema → Actualizar</b>. Antes guarda una copia y, si la versión nueva no responde, vuelve sola a la anterior.</p></div></li>
+      </ol>
+      <div>
+        <div class="terminal">
+          <header>Instalar <button class="copiar" data-copiar="curl -fsSL https://raw.githubusercontent.com/Gaaraalex/opennccm/main/install.sh -o install.sh && sudo bash install.sh">Copiar</button></header>
+          <pre><span class="p">$ </span>curl -fsSL https://raw.githubusercontent.com/Gaaraalex/opennccm/main/install.sh -o install.sh &amp;&amp; sudo bash install.sh</pre>
+        </div>
+        <div class="terminal">
+          <header>Actualizar desde la consola <button class="copiar" data-copiar="sudo opennccm update">Copiar</button></header>
+          <pre><span class="p">$ </span>sudo opennccm update</pre>
+        </div>
+        <details class="plegable">
+          <summary>Instalación desatendida (sin preguntas)</summary>
+          <div>
+            <div class="terminal">
+              <header>Para automatizar <button class="copiar" data-copiar="curl -fsSL https://raw.githubusercontent.com/Gaaraalex/opennccm/main/install.sh | sudo bash -s -- --unattended --host 10.0.0.5 --admin-pass 'UnaClaveSegura123'">Copiar</button></header>
+              <pre><span class="p">$ </span>curl -fsSL https://raw.githubusercontent.com/Gaaraalex/opennccm/main/install.sh | \
+  sudo bash -s -- --unattended --host 10.0.0.5 --admin-pass 'UnaClaveSegura123'</pre>
+            </div>
+            <p style="color:var(--muted);font-size:14px;margin:12px 0 0">Todas las opciones con <code>sudo bash install.sh --help</code>: HTTPS con Let's Encrypt o certificado propio, PostgreSQL, cortafuegos, correo, versión concreta…</p>
+          </div>
+        </details>
+        <p class="nota">Cada cambio se prueba automáticamente en Ubuntu 22.04 y 24.04: instalación, asistente, actualización, vuelta atrás y recuperación ante una versión rota.</p>
+      </div>
+    </div>
+
+    <div class="dos-col">
+      <div class="tabla">
+        <h3>Requisitos</h3>
+        <p>Puertos: TCP 443 (web) y UDP 514 (syslog de los equipos); salida a los equipos por TCP 22.</p>
+        <table>
+          <thead><tr><th>Equipos</th><th>CPU</th><th>RAM</th><th>Disco</th></tr></thead>
+          <tbody>
+            <tr><td>hasta 300</td><td>2 vCPU</td><td>4 GB</td><td>40 GB</td></tr>
+            <tr><td>300 – 2 000</td><td>4 vCPU</td><td>8 GB</td><td>100 GB</td></tr>
+            <tr><td>más de 2 000</td><td>8 vCPU</td><td>16 GB</td><td>200 GB + PostgreSQL</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tabla">
+        <h3>Comandos del servidor</h3>
+        <p>La herramienta <code>opennccm</code> se instala con la aplicación.</p>
+        <table>
+          <tbody>
+            <tr><td><code>opennccm status</code></td><td>Estado, versión y actualizaciones</td></tr>
+            <tr><td><code>sudo opennccm update</code></td><td>Actualizar (o <code>--check</code>)</td></tr>
+            <tr><td><code>sudo opennccm rollback</code></td><td>Volver a la versión anterior</td></tr>
+            <tr><td><code>sudo opennccm backup</code></td><td>Copia de recuperación</td></tr>
+            <tr><td><code>sudo opennccm reset-2fa USUARIO</code></td><td>Quitar el segundo paso</td></tr>
+            <tr><td><code>opennccm logs -f</code></td><td>Registro del servicio</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="fabricantes" class="alterna">
+  <div class="contenedor">
+    <div class="cabecera-seccion centrada">
+      <p class="eyebrow">Fabricantes</p>
+      <h2>125 plataformas de unos 70 fabricantes</h2>
+      <p class="intro">Sobre <a href="https://github.com/ktbyers/netmiko">Netmiko</a>, con lectura de inventario, detección de errores y limpieza de falsos cambios para cada marca. Cualquier otro equipo con SSH se gestiona con el perfil genérico.</p>
+    </div>
+    <ul class="nube">
+      <li>Cisco IOS · IOS-XE · NX-OS · IOS-XR</li><li>Cisco ASA · FTD · WLC</li><li>Juniper</li><li>Arista</li><li>HPE / Aruba</li><li>H3C</li><li>Huawei</li><li>Fortinet</li><li>Palo Alto</li><li>Check Point</li><li>Sophos</li><li>F5</li><li>Citrix</li><li>A10</li><li>WatchGuard</li><li>Hillstone</li><li>MikroTik</li><li>Dell</li><li>Extreme EXOS · VOSS</li><li>Avaya / Nortel</li><li>Brocade</li><li>Ruckus</li><li>Nokia</li><li>Alcatel-Lucent</li><li>Ciena</li><li>ADVA</li><li>Adtran</li><li>Calix</li><li>Ericsson</li><li>NVIDIA Cumulus · Mellanox</li><li>D-Link</li><li>Netgear</li><li>FS</li><li>Hirschmann</li><li>Moxa</li><li>Ubiquiti</li><li>TP-Link</li><li>ZTE</li><li>Ruijie</li><li>VyOS</li><li>pfSense</li><li>OPNsense</li><li>Alpine Linux</li><li class="mas">y muchos más</li>
+    </ul>
+  </div>
+</section>
+
+<section id="novedades">
+  <div class="contenedor">
+    <div class="cabecera-seccion">
+      <p class="eyebrow">Novedades</p>
+      <h2>Mejora cada semana</h2>
+      <p class="intro">Las últimas versiones publicadas. La propia aplicación avisa cuando hay una nueva y la instala con un clic.</p>
+    </div>
+    <div class="versiones" id="versiones"></div>
+    <div class="centro"><a class="boton" href="novedades.html">Ver el historial completo</a></div>
+  </div>
+</section>
+
+<section id="documentacion" class="alterna">
+  <div class="contenedor">
+    <div class="cabecera-seccion">
+      <p class="eyebrow">Documentación</p>
+      <h2>Guías en español, con capturas</h2>
+    </div>
+    <div class="docs">
+      <a class="doc" href="https://github.com/Gaaraalex/opennccm/raw/main/docs/OpenNCCM-Guia-de-instalacion.pdf"><span class="icono">📘</span><b>Guía de instalación</b><span>Paso a paso en Ubuntu, en PDF</span></a>
+      <a class="doc" href="https://github.com/Gaaraalex/opennccm/raw/main/docs/OpenNCCM-Manual-de-funciones.pdf"><span class="icono">📗</span><b>Manual de funciones</b><span>Cada pantalla explicada, en PDF</span></a>
+      <a class="doc" href="novedades.html"><span class="icono">📝</span><b>Historial de versiones</b><span>Qué cambió en cada versión</span></a>
+      <a class="doc" href="https://github.com/Gaaraalex/opennccm/blob/main/CONTRIBUTING.md"><span class="icono">🤝</span><b>Contribuir</b><span>Cómo proponer cambios en GitHub</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="llamada">
+  <div class="contenedor">
+    <h2>Su red, respaldada y bajo control</h2>
+    <p class="intro" style="margin-inline:auto">Código abierto con licencia GPL-3.0: puede usarlo, estudiarlo, modificarlo y distribuirlo.</p>
+    <div class="acciones">
+      <a class="boton primario" href="#instalar">Instalar ahora</a>
+      <a class="boton" href="https://github.com/Gaaraalex/opennccm">Código en GitHub</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="contenedor">
+    <a class="marca" href="./"><img src="img/icon.svg" alt="" width="26" height="26"><b>Open<span>NCCM</span></b></a>
+    <nav aria-label="Pie">
+      <a href="https://github.com/Gaaraalex/opennccm">GitHub</a>
+      <a href="https://github.com/Gaaraalex/opennccm/releases">Versiones</a>
+      <a href="https://github.com/Gaaraalex/opennccm/issues">Informar un problema</a>
+      <a href="https://github.com/Gaaraalex/opennccm/blob/main/SECURITY.md">Seguridad</a>
+      <a href="https://github.com/Gaaraalex/opennccm/blob/main/LICENSE">Licencia GPL-3.0</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="js/web.js" defer></script>
+</body>
+</html>
