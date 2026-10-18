@@ -26,6 +26,7 @@ Con una copia local del sistema: `OPENNCCM_SRC=../opennccm node scripts/build.mj
 ```
 site/index.html        portada: funciones, capturas, instalación, fabricantes, novedades, documentación
 site/novedades.html    historial completo de versiones
+site/en/               versión en inglés (index.html, changelog.html); hreflang en todas las páginas
 site/css/estilo.css    estilos (tema oscuro, adaptable al teléfono)
 site/js/web.js         menú, galería, copiar comandos y carga de novedades
 ```
