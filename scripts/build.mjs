@@ -14,6 +14,7 @@ const REPO = "Gaaraalex/opennccm";
 const RAW = `https://raw.githubusercontent.com/${REPO}/main/`;
 const SITE = join(dirname(fileURLToPath(import.meta.url)), "..", "site");
 const SRC = process.env.OPENNCCM_SRC;
+const DOMINIO = "https://opennccm.com";
 const CAPTURAS = ["hero", "panel", "equipo", "diff", "consola", "cumplimiento", "analisis", "temas"];
 
 async function leer(ruta, binario = false) {
@@ -91,6 +92,13 @@ await writeFile(join(SITE, "data", "novedades.json"), JSON.stringify({
   ultima: versiones[0]?.version,
   versiones,
 }, null, 1));
+// El sitemap lleva la fecha de la última versión: así los buscadores saben cuándo cambió la web.
+const ultimaFecha = (versiones[0]?.fecha || new Date().toISOString()).slice(0, 10);
+await writeFile(join(SITE, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${["", "novedades.html"].map((p) => `  <url><loc>${DOMINIO}/${p}</loc><lastmod>${ultimaFecha}</lastmod></url>`).join("\n")}
+</urlset>
+`);
 for (const c of CAPTURAS) {
   await writeFile(join(SITE, "img", "capturas", `${c}.png`), await leer(`docs/readme/${c}.png`, true));
 }
