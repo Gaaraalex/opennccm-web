@@ -113,7 +113,7 @@ h2 { font-size: clamp(30px, 4vw, 42px); font-weight: 700; }
 
 /* ---------- Cifras ---------- */
 .cifras { border-block: 1px solid var(--border); background: var(--bg-2); }
-.cifras ul { list-style: none; margin: 0; padding: 26px 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.cifras ul { list-style: none; margin-block: 0; padding-block: 26px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
 .cifras li { text-align: center; }
 .cifras b { display: block; font: 700 30px var(--display); color: var(--text); }
 .cifras span { color: var(--muted); font-size: 14px; }
