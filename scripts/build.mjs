@@ -94,9 +94,21 @@ await writeFile(join(SITE, "data", "novedades.json"), JSON.stringify({
 }, null, 1));
 // El sitemap lleva la fecha de la última versión: así los buscadores saben cuándo cambió la web.
 const ultimaFecha = (versiones[0]?.fecha || new Date().toISOString()).slice(0, 10);
+// Cada página con sus traducciones (hreflang); x-default apunta a la versión en inglés.
+const PAGINAS = [
+  { es: "/", en: "/en/" },
+  { es: "/novedades.html", en: "/en/changelog.html" },
+];
+const alternativas = (p) => ["es", "en"].map((l) =>
+  `    <xhtml:link rel="alternate" hreflang="${l}" href="${DOMINIO}${p[l]}"/>`).join("\n") +
+  `\n    <xhtml:link rel="alternate" hreflang="x-default" href="${DOMINIO}${p.en}"/>`;
 await writeFile(join(SITE, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${["", "novedades.html"].map((p) => `  <url><loc>${DOMINIO}/${p}</loc><lastmod>${ultimaFecha}</lastmod></url>`).join("\n")}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${PAGINAS.flatMap((p) => ["es", "en"].map((l) => `  <url>
+    <loc>${DOMINIO}${p[l]}</loc>
+    <lastmod>${ultimaFecha}</lastmod>
+${alternativas(p)}
+  </url>`)).join("\n")}
 </urlset>
 `);
 for (const c of CAPTURAS) {

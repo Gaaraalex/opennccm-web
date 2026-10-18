@@ -256,3 +256,9 @@ footer a { color: var(--muted); }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* ---------- Selector de idioma ---------- */
+.menu a.idioma { border: 1px solid var(--border); border-radius: 8px; padding: 2px 10px; }
+.menu a.idioma:hover { border-color: #34466f; }
+.nota-idioma { color: var(--muted); font-size: 14px; margin: 10px 0 0; }
+@media (max-width: 760px) { .barra.abierta .menu a.idioma { border: 0; border-bottom: 1px solid var(--border); border-radius: 0; padding: 12px 0; } }
