@@ -1,7 +1,7 @@
 # Web de OpenNCCM
 
-Página pública de [OpenNCCM](https://github.com/Gaaraalex/opennccm). HTML, CSS y JavaScript sin
-frameworks, publicada en GitHub Pages.
+**https://opennccm.com** · Página pública de [OpenNCCM](https://github.com/Gaaraalex/opennccm). HTML, CSS y JavaScript sin
+frameworks, publicada en GitHub Pages con dominio propio (DNS en Cloudflare; `opennccm.org` redirige a `opennccm.com`).
 
 ## Cómo se mantiene al día
 
