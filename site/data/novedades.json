@@ -1,7 +1,18 @@
 {
- "generado": "2026-10-20T19:00:13.685Z",
- "ultima": "2.0.0",
+ "generado": "2026-10-20T20:50:25.847Z",
+ "ultima": "2.0.1",
  "versiones": [
+  {
+   "version": "2.0.1",
+   "destacados": [
+    "Consola SSH en un diálogo",
+    "Activar la verificación en dos pasos",
+    "Ficha del equipo",
+    "Actualizador"
+   ],
+   "html": "<ul><li><strong>Consola SSH en un diálogo</strong> sobre la página, como en el prototipo: Reconectar, Pantalla completa, cerrar y estado de la conexión. Un botón la abre en una ventana aparte (redimensionable) y Ctrl+clic, en una pestaña nueva. La ventana propia tiene la misma cabecera.</li><li><strong>Activar la verificación en dos pasos</strong>: el código QR y la clave ya no se solapan; el código se escribe en seis casillas (se puede pegar).</li><li><strong>Ficha del equipo</strong>: el menú ⋯ muestra siempre las opciones de línea base (sin línea base, permite marcar la última versión) y «Últimas versiones» de un equipo sin respaldos muestra bien su estado vacío.</li><li><strong>Actualizador</strong>: <code>opennccm update</code> ya no falla de vez en cuando con el código 141 (SIGPIPE) al leer las novedades del CHANGELOG ni al comprobar la configuración de git.</li><li>Ctrl K: «Administración › Grupos» lleva a la pestaña Grupos.</li><li>Manual de funciones, guía de instalación y capturas del README actualizados al diseño «Señal 2».</li></ul>",
+   "fecha": "2026-10-20T20:49:50Z"
+  },
   {
    "version": "2.0.0",
    "destacados": [
