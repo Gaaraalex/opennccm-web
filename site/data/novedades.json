@@ -1,7 +1,17 @@
 {
- "generado": "2026-10-18T19:39:04.649Z",
- "ultima": "1.7.0",
+ "generado": "2026-10-20T01:19:55.453Z",
+ "ultima": "1.8.0",
  "versiones": [
+  {
+   "version": "1.8.0",
+   "destacados": [
+    "Interfaz en español e inglés",
+    "Análisis renovado",
+    "Nueva pantalla de ingreso"
+   ],
+   "html": "<ul><li><strong>Interfaz en español e inglés</strong>. Cada usuario elige su idioma en «Mi cuenta → Idioma» o en la pantalla de ingreso, y queda guardado en su usuario. Sin elección se usa el idioma del navegador y, si no está disponible, el predeterminado que fija el administrador en «Ajustes». Se traducen menús, páginas, avisos, gráficas, programación de tareas y la consola SSH. Los datos (nombres de políticas, eventos ya registrados, auditoría, CVE) y los PDF siguen en su idioma original; los CSV mantienen los encabezados en español. Añadir otro idioma es completar un archivo de traducciones (<code>scripts/i18n_missing.py</code>).</li><li><strong>Análisis renovado</strong>: indicadores con tendencia y comparación con el período anterior, cumplimiento global con anillo de estado, actividad de cambios apilada por origen, mapa de calor «cuándo cambia la red» (día × hora), anillo con el origen de los cambios, cumplimiento por política con color e icono (✓ ⚠ ✕) y ciclo de vida en una barra al 100 %. Al pasar el cursor sobre cualquier barra, celda o segmento se ve su valor exacto.</li><li><strong>Nueva pantalla de ingreso</strong>: panel de presentación con las funciones principales, botón para ver la contraseña escrita, aviso de Bloq Mayús y selector de idioma. La verificación en dos pasos usa el mismo diseño. En el teléfono se muestra solo el formulario.</li></ul>",
+   "fecha": "2026-10-19T23:59:07Z"
+  },
   {
    "version": "1.7.0",
    "destacados": [
