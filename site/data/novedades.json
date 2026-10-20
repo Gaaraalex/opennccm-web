@@ -1,7 +1,16 @@
 {
- "generado": "2026-10-20T20:50:25.847Z",
- "ultima": "2.0.1",
+ "generado": "2026-10-20T22:02:36.014Z",
+ "ultima": "2.1.0",
  "versiones": [
+  {
+   "version": "2.1.0",
+   "destacados": [
+    "Inicio de sesión con Active Directory",
+    "Inicio de sesión con Microsoft Entra ID (Azure AD)"
+   ],
+   "html": "<ul><li><strong>Inicio de sesión con Active Directory</strong> (LDAP/LDAPS o StartTLS): las personas entran con su usuario y contraseña de la red en el mismo formulario. Su rol (administrador, operador o lector) sale de los grupos del directorio, también anidados; la cuenta se crea al primer ingreso y el rol se actualiza en cada ingreso. <strong>Probar conexión</strong> comprueba la cuenta de servicio y el rol que tendría un usuario.</li><li><strong>Inicio de sesión con Microsoft Entra ID (Azure AD)</strong>: botón <strong>Entrar con Microsoft</strong> (OpenID Connect con PKCE, state y nonce; se validan la firma, el emisor, la audiencia y la caducidad del token). Los roles salen de los grupos o de los roles de aplicación del token. Con la URL de descubrimiento sirve también para Google Workspace, Keycloak, Okta y otros proveedores.</li><li>Las cuentas locales siguen funcionando siempre y nunca se toman desde un directorio. En <strong>Usuarios</strong> se marca el origen de cada cuenta; la verificación en dos pasos, los bloqueos por intentos fallidos y la auditoría también se aplican a estas cuentas.</li><li>Nueva sección <strong>Ajustes → Inicio de sesión</strong> y capítulo en el manual de funciones.</li></ul>",
+   "fecha": "2026-10-20T22:01:48Z"
+  },
   {
    "version": "2.0.1",
    "destacados": [
