@@ -1,7 +1,18 @@
 {
- "generado": "2026-10-20T14:55:56.656Z",
- "ultima": "1.9.0",
+ "generado": "2026-10-20T19:00:13.685Z",
+ "ultima": "2.0.0",
  "versiones": [
+  {
+   "version": "2.0.0",
+   "destacados": [
+    "Interfaz rehecha pantalla por pantalla según el prototipo de diseño «Señal 2»",
+    "Ingreso, Panel, Dispositivos y ficha del equipo",
+    "Cambios, Configlets y Tareas",
+    "Cumplimiento"
+   ],
+   "html": "<ul><li><strong>Interfaz rehecha pantalla por pantalla según el prototipo de diseño «Señal 2»</strong>, con los datos reales de cada instalación: armazón, barra superior (búsqueda, tema y acento, notificaciones, ayuda), paneles laterales, diálogos y avisos con «Deshacer».</li><li><strong>Ingreso, Panel, Dispositivos y ficha del equipo</strong> con el nuevo diseño: línea de tiempo de versiones, comparación lado a lado en la propia ficha, menú ⋯ y paneles para agregar, importar y editar equipos.</li><li><strong>Cambios, Configlets y Tareas</strong>: Cambios se abre en «Por aprobar»; los configlets se ejecutan en un panel con vista previa en vivo y campos por variable; las tareas muestran la próxima ejecución en palabras («hoy 06:00», «lun 07:00»).</li><li><strong>Cumplimiento</strong>: mapa equipo × política, políticas con barra por gravedad y «Corregir» en cada regla, y un editor de políticas que guarda todas las reglas a la vez y prueba cada una en vivo.</li><li><strong>Vulnerabilidades agrupadas por CVE</strong>, con indicadores y la marca <strong>«explotado activamente»</strong> del catálogo KEV de CISA (se descarga como mucho una vez al día al escanear; sin conexión no se marca).</li><li><strong>Firmware y ciclo de vida</strong> en una página con pestañas: imágenes, actualizar equipos y fin de vida, con una barra del soporte restante de cada equipo y la base de datos filtrable por fabricante.</li><li><strong>Alarmas</strong> con chips por severidad y «Sin reconocer / Todas»; <strong>Análisis</strong> con mapa de calor, origen de los cambios y barras; <strong>Informes</strong> en tarjetas.</li><li><strong>Administración</strong> en pestañas con recuentos: usuarios con tarjetas de rol, credenciales con su estado real según los equipos, <strong>Grupos</strong> como pestaña propia, plataformas, auditoría, <strong>Sistema</strong> (gráficas de 24 h, espacio, actualizaciones, copias, fecha y hora) y <strong>Ajustes</strong> por secciones con barra de cambios sin guardar.</li><li><strong>Mi cuenta</strong> con apariencia, densidad de tablas, idioma, verificación en dos pasos y reglas de contraseña en vivo; Acerca de y Certificado con el nuevo diseño.</li><li>Interfaz en inglés completa y accesibilidad mantenida (tema de alto contraste, teclado, barras con <code>role=\"meter\"</code>).</li></ul>",
+   "fecha": "2026-10-20T18:59:14Z"
+  },
   {
    "version": "1.9.0",
    "destacados": [
