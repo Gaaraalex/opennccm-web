@@ -8,6 +8,7 @@
   --muted: #9aa7c0;
   --blue: #3b82f6;
   --blue-2: #2f80ff;
+  --lima: #c6f432;
   --blue-soft: rgba(59, 130, 246, .14);
   --green: #22c55e;
   --amber: #f59e0b;
@@ -56,7 +57,7 @@ h2 { font-size: clamp(30px, 4vw, 42px); font-weight: 700; }
 .marca { display: flex; align-items: center; gap: 10px; color: var(--text); font: 700 20px var(--display); }
 .marca:hover { text-decoration: none; }
 .marca img { width: 30px; height: 30px; }
-.marca span { color: var(--blue-2); }
+.marca span { color: var(--lima); }
 .menu { display: flex; gap: 24px; margin-left: auto; }
 .menu a { color: var(--muted); font-size: 15px; font-weight: 500; }
 .menu a:hover, .menu a[aria-current] { color: var(--text); text-decoration: none; }
@@ -262,3 +263,14 @@ footer a { color: var(--muted); }
 .menu a.idioma:hover { border-color: #34466f; }
 .nota-idioma { color: var(--muted); font-size: 14px; margin: 10px 0 0; }
 @media (max-width: 760px) { .barra.abierta .menu a.idioma { border: 0; border-bottom: 1px solid var(--border); border-radius: 0; padding: 12px 0; } }
+
+/* ---------- Barra en pantallas medianas: que el menú no pise el logo ---------- */
+.marca { flex: none; }
+@media (max-width: 1180px) and (min-width: 761px) {
+  .barra .contenedor { gap: 18px; }
+  .menu { gap: 16px; }
+  .menu a { font-size: 14px; }
+}
+@media (max-width: 960px) and (min-width: 761px) {
+  .barra .boton.chico { display: none; }
+}

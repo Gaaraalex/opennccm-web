@@ -1,7 +1,18 @@
 {
- "generado": "2026-10-20T01:19:55.453Z",
- "ultima": "1.8.0",
+ "generado": "2026-10-20T14:55:56.656Z",
+ "ultima": "1.9.0",
  "versiones": [
+  {
+   "version": "1.9.0",
+   "destacados": [
+    "Nuevo diseño «Señal»",
+    "Temas",
+    "Panel",
+    "Dispositivos"
+   ],
+   "html": "<ul><li><strong>Nuevo diseño «Señal»</strong> en toda la interfaz. Barra lateral agrupada por tarea (Operar, Proteger, Observar, Administrar) con contadores de lo pendiente y opción de plegarla; Administración y Firmware + EOL en pestañas; buscador <strong>Ctrl K</strong> para ir a cualquier página, abrir un equipo o buscar en las configuraciones; avisos flotantes y paneles laterales para altas y ediciones. Fuentes e iconos propios servidos desde el propio servidor (sin conexiones externas) y marca nueva.</li><li><strong>Temas</strong>: Claro, Sala de control (oscuro) y Alto contraste, más un <strong>color de acento</strong> a elegir entre siete. Quien usaba uno de los temas de color anteriores conserva su color como acento.</li><li><strong>Panel</strong>: puntuación de <strong>salud de la red</strong> (0 a 100) con lo que la está bajando y una bandeja <strong>«Qué hacer ahora»</strong> con un botón para cada asunto. El rendimiento del servidor pasa a Administración → Sistema.</li><li><strong>Dispositivos</strong>: filtros por estado con contadores, acciones en cada fila, <strong>acciones masivas</strong> (respaldar, auditar y mover a un grupo) e <strong>importación CSV en un panel lateral con vista previa</strong> de las filas válidas y con error.</li><li><strong>Ficha del equipo</strong> en pestañas, menú ⋯ con las acciones menos frecuentes y confirmación escribiendo el nombre para eliminar. Las versiones se ven en una <strong>línea de tiempo</strong>: se pulsan dos para compararlas.</li><li><strong>Comparación</strong>: resumen <strong>«Qué cambió»</strong> en palabras, teclas <strong>n/p</strong> para saltar entre cambios y una minibarra con su posición.</li><li><strong>Cumplimiento</strong> agrupado por política con <strong>«Corregir N»</strong> (una solicitud de cambio por equipo con todas sus correcciones) y <strong>prueba de reglas en vivo</strong> contra la configuración de un equipo antes de guardarlas. Las severidades se muestran con forma y texto traducido.</li><li><strong>Deshacer</strong> al reconocer alarmas, barra <strong>«Tienes cambios sin guardar»</strong> en Ajustes y estados vacíos que explican el primer paso.</li><li>Manual, guía de instalación y capturas del README actualizados.</li></ul>",
+   "fecha": "2026-10-20T14:44:30Z"
+  },
   {
    "version": "1.8.0",
    "destacados": [
