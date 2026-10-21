@@ -274,3 +274,9 @@ footer a { color: var(--muted); }
 @media (max-width: 960px) and (min-width: 761px) {
   .barra .boton.chico { display: none; }
 }
+
+/* ---------- Apoya OpenNCCM (Ko-fi) ---------- */
+.boton.apoyo { border-color: rgba(198, 244, 50, .45); }
+.boton.apoyo span { color: var(--lima); }
+.boton.apoyo:hover { border-color: var(--lima); }
+footer a.apoyo { color: var(--lima); }
