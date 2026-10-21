@@ -266,12 +266,12 @@ footer a { color: var(--muted); }
 
 /* ---------- Barra en pantallas medianas: que el menú no pise el logo ---------- */
 .marca { flex: none; }
-@media (max-width: 1180px) and (min-width: 761px) {
+@media (max-width: 1300px) and (min-width: 761px) {
   .barra .contenedor { gap: 18px; }
   .menu { gap: 16px; }
   .menu a { font-size: 14px; }
 }
-@media (max-width: 960px) and (min-width: 761px) {
+@media (max-width: 1080px) and (min-width: 761px) {
   .barra .boton.chico { display: none; }
 }
 
@@ -280,3 +280,34 @@ footer a { color: var(--muted); }
 .boton.apoyo span { color: var(--lima); }
 .boton.apoyo:hover { border-color: var(--lima); }
 footer a.apoyo { color: var(--lima); }
+
+/* ---------- «Apoya OpenNCCM» en la barra, igual que en la aplicación ---------- */
+.donate { display: inline-flex; align-items: center; gap: 10px; height: 40px; padding: 0 5px 0 12px; flex: none;
+  background: #0f1524; border: 1px dashed rgba(255, 255, 255, .22); border-radius: 12px; color: #fff;
+  text-align: left; white-space: nowrap; transition: border-color .15s; }
+.donate:hover, .donate:focus-visible { border-color: var(--lima); text-decoration: none; color: #fff; }
+.donate .ico { width: 18px; height: 18px; flex: none; color: var(--lima); stroke: currentColor; fill: none;
+  stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.donate .dt { display: flex; flex-direction: column; line-height: 1.2; }
+.donate .dt b { font-size: 12px; font-weight: 600; color: #fff; }
+.donate .dt small { font-size: 11px; color: #a9b3c7; }
+.donate .dbtn { background: var(--lima); color: #0f1720; font: 600 11.5px var(--font); padding: 6px 11px; border-radius: 99px; }
+@media (max-width: 1520px) { .donate .dt small { display: none; } .donate { height: 36px; } }
+@media (max-width: 1180px) { .donate { width: 36px; height: 36px; padding: 0; justify-content: center; } .donate .dt, .donate .dbtn { display: none; } }
+@media (max-width: 760px) { .donate { margin-left: auto; } .abrir-menu { margin-left: 0; } }
+@media (prefers-reduced-motion: reduce) { .donate { transition: none; } }
+
+.barra .contenedor { max-width: 1360px; }
+
+/* Menú hamburguesa ya desde 900 px: con «Apoya OpenNCCM» el menú completo no cabe */
+@media (max-width: 900px) {
+  .menu, .barra .boton { display: none; }
+  .abrir-menu { display: block; margin-left: 0; }
+  .donate { margin-left: auto; }
+  .barra.abierta .menu {
+    display: flex; flex-direction: column; gap: 0; position: absolute; top: 64px; left: 0; right: 0;
+    background: var(--bg); border-bottom: 1px solid var(--border); padding: 8px 16px 16px;
+  }
+  .barra.abierta .menu a { padding: 12px 0; font-size: 17px; border-bottom: 1px solid var(--border); }
+  .barra.abierta .menu a.idioma { border: 0; border-bottom: 1px solid var(--border); border-radius: 0; padding: 12px 0; }
+}
