@@ -1,7 +1,18 @@
 {
- "generado": "2026-10-21T01:35:33.234Z",
- "ultima": "2.2.0",
+ "generado": "2026-10-21T16:18:36.762Z",
+ "ultima": "2.2.1",
  "versiones": [
+  {
+   "version": "2.2.1",
+   "destacados": [
+    "Buscar CVE de firmware",
+    "Vulnerabilidades de switches Ubiquiti",
+    "Extreme VOSS / Fabric Engine",
+    "Nuevos paquetes de cumplimiento"
+   ],
+   "html": "<ul><li><strong>Buscar CVE de firmware</strong> ya no falla con «Error consultando NVD: Response ended prematurely» en equipos con muchos CVE, como Cisco IOS 12.4:<ul><li>OpenNCCM pide los CVE a NVD en páginas pequeñas (40 por petición, menos si NVD corta la respuesta) en lugar de 200 de una vez; antes una sola respuesta podía pesar más de 1,5 MB, tardar casi un minuto y cortarse a medias;</li><li>cada página se reintenta hasta 4 veces ante cortes, tiempos agotados o el límite de peticiones de NVD, que ahora se respeta también entre búsquedas;</li><li>la búsqueda va en segundo plano: el botón responde al instante y la pestaña Vulnerabilidades muestra «Buscando en NVD…» y se actualiza sola al terminar;</li><li>si NVD no responde, se conservan los CVE de la búsqueda anterior y el aviso explica qué pasó.</li></ul></li><li><strong>Vulnerabilidades de switches Ubiquiti</strong>: EdgeSwitch, UniFi Switch y EdgeRouter se buscan ahora por sus nombres en NVD (antes se buscaba por texto y no se encontraba nada). La versión se compara sin el número de compilación.</li><li><strong>Extreme VOSS / Fabric Engine</strong>: NVD casi no registra sus vulnerabilidades; la pestaña Vulnerabilidades lo indica y enlaza a los avisos de seguridad de Extreme. También se consulta el nombre antiguo del producto (Avaya VSP).</li><li><strong>Nuevos paquetes de cumplimiento</strong> (llegan solos al actualizar):<ul><li><strong>Extreme VOSS · Seguridad básica</strong> (12 reglas): sin Telnet, FTP, TFTP ni rlogin; SSH; web solo por HTTPS; sin comunidades SNMP por defecto; cierre de sesión inactiva; RADIUS o TACACS+; syslog; NTP y banner.</li><li><strong>Ubiquiti EdgeSwitch/UniFi · Seguridad básica</strong> (7 reglas): sin la cuenta por defecto «ubnt»; SSH; sin Telnet ni HTTP sin cifrar; sin comunidades SNMP por defecto; syslog y SNTP.</li><li>Muchas reglas traen el comando para corregirlas con «Corregir». Si se borra un paquete, no vuelve a aparecer.</li></ul></li></ul>",
+   "fecha": "2026-10-21T16:17:43Z"
+  },
   {
    "version": "2.2.0",
    "destacados": [
