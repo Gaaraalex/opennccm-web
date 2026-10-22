@@ -1,7 +1,18 @@
 {
- "generado": "2026-10-21T23:40:43.597Z",
- "ultima": "2.4.1",
+ "generado": "2026-10-22T23:56:02.696Z",
+ "ultima": "2.5.0",
  "versiones": [
+  {
+   "version": "2.5.0",
+   "destacados": [
+    "«Recordarme en este equipo»",
+    "Aviso «Actualización disponible»",
+    "Densidad de tablas",
+    "Selector de fabricante"
+   ],
+   "html": "<ul><li><strong>«Recordarme en este equipo»</strong> en el inicio de sesión:<ul><li>recuerda el usuario en ese navegador y mantiene la sesión abierta varios días (14 por omisión), aunque se cierre el navegador y sin cierre por inactividad;</li><li>la contraseña no la guarda OpenNCCM: el formulario permite que la guarde el gestor de contraseñas del navegador;</li><li>en Ajustes se elige la duración (1 a 30 días; 0 quita la opción). Bajarla acorta también las sesiones ya abiertas, y cambiar la contraseña las cierra todas;</li><li>funciona con la verificación en dos pasos, Active Directory y Microsoft Entra ID.</li></ul></li><li><strong>Aviso «Actualización disponible»</strong>: su botón principal no hacía nada si ya se estaba en Sistema (solo cambiaba el ancla de la página y el aviso seguía tapándola).<ul><li>Si el servidor puede actualizarse desde la web, el aviso tiene un botón «Actualizar ahora» que inicia la actualización (copia previa y vuelta atrás automática si falla).</li><li>«Ver detalles» o «Cómo actualizar» cierran el aviso y llevan a la sección Actualizaciones.</li></ul></li><li><strong>Densidad de tablas</strong>: la opción «Compacta» casi no se notaba. Ahora acorta también las filas de Dispositivos, Cambios y Alarmas, y Mi cuenta muestra una vista previa. Además, cualquier clic en Mi cuenta volvía a guardar la preferencia.</li><li><strong>Selector de fabricante</strong> al agregar o editar un equipo: los nombres de grupo («A10 Networks», «Adtran»…) salían en blanco en el tema oscuro y casi ilegibles en el claro. Ahora usan los colores del tema con buen contraste.</li></ul>",
+   "fecha": "2026-10-22T23:54:45Z"
+  },
   {
    "version": "2.4.1",
    "destacados": [
