@@ -1,7 +1,17 @@
 {
- "generado": "2026-10-22T23:56:02.696Z",
- "ultima": "2.5.0",
+ "generado": "2026-10-25T14:07:03.307Z",
+ "ultima": "2.6.0",
  "versiones": [
+  {
+   "version": "2.6.0",
+   "destacados": [
+    "Paginador",
+    "Cumplimiento y Vulnerabilidades vuelven a verse como en la 2.4.1",
+    "«Recordarme»"
+   ],
+   "html": "<ul><li><strong>Paginador</strong> debajo de las listas de Cumplimiento, Vulnerabilidades, Alarmas, Usuarios, Credenciales, Grupos y Auditoría:<ul><li>15 por página por omisión, con la opción de ver 25, 50 o 100;</li><li>la elección no se guarda: al salir de la página vuelve a 15;</li><li>en Alarmas, los filtros (severidad, «Sin reconocer») se mantienen al cambiar de página.</li></ul></li><li><strong>Cumplimiento y Vulnerabilidades vuelven a verse como en la 2.4.1.</strong> La densidad «Compacta» de la 2.5.0 también cambiaba esas tablas; ahora solo acorta Dispositivos, Cambios y Alarmas, como se pidió.</li><li><strong>«Recordarme»</strong> ahora pide además al gestor de contraseñas del navegador que guarde la contraseña (OpenNCCM no la guarda). Los navegadores solo lo hacen si confían en el certificado del servidor: si muestran «No es seguro», instala el certificado con el enlace del inicio de sesión.</li></ul>",
+   "fecha": "2026-10-23T01:42:33Z"
+  },
   {
    "version": "2.5.0",
    "destacados": [

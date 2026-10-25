@@ -89,3 +89,17 @@ fetch(`${BASE}data/novedades.json`, { cache: "no-cache" }).then((r) => r.json())
   const msg = `<p style="color:var(--muted)">${T.error}</p>`;
   for (const id of ["versiones", "historial"]) { const el = document.getElementById(id); if (el) el.innerHTML = msg; }
 });
+
+// Formas de donar: desplegable del botón «Apoya OpenNCCM» de la barra
+const donar = $(".donate"), donPop = $("#don-pop");
+if (donar && donPop) {
+  const cerrar = () => { donPop.hidden = true; donar.setAttribute("aria-expanded", "false"); };
+  donar.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const abrir = donPop.hidden;
+    donPop.hidden = !abrir; donar.setAttribute("aria-expanded", String(abrir));
+    if (abrir) donPop.querySelector("a")?.focus();
+  });
+  document.addEventListener("click", (e) => { if (!donPop.hidden && !donPop.contains(e.target)) cerrar(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !donPop.hidden) { cerrar(); donar.focus(); } });
+}
