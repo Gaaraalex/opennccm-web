@@ -311,3 +311,28 @@ footer a.apoyo { color: var(--lima); }
   .barra.abierta .menu a { padding: 12px 0; font-size: 17px; border-bottom: 1px solid var(--border); }
   .barra.abierta .menu a.idioma { border: 0; border-bottom: 1px solid var(--border); border-radius: 0; padding: 12px 0; }
 }
+
+/* ---------- Formas de donar: desplegable de la barra (como en la aplicación) ---------- */
+.apoyo-wrap { position: relative; flex: none; }
+button.donate { font: inherit; cursor: pointer; }
+.donate[aria-expanded="true"] { border-color: var(--lima); }
+.don-pop { position: absolute; right: 0; top: 48px; width: 300px; z-index: 60; padding: 14px; text-align: left;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 20px 50px -12px rgba(0, 0, 0, .7); }
+.don-pop[hidden] { display: none; }
+.don-cab { display: flex; align-items: center; gap: 10px; }
+.don-cab b { font-size: 15px; }
+.don-ico { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; background: #0f1524; color: var(--lima); }
+.don-pop p { margin: 10px 0 4px; color: var(--muted); font-size: 13px; line-height: 1.55; white-space: normal; }
+.dopt { display: flex; align-items: center; gap: 8px; margin-top: 6px; padding: 9px 12px; border-radius: 12px;
+  border: 1px solid var(--border); color: var(--text); font: 600 13.5px var(--font); white-space: nowrap; }
+.dopt:hover { text-decoration: none; background: var(--surface-2); border-color: #34466f; }
+.dopt .grow { flex: 1; }
+.don-pop .ico, .boton.apoyo .ico, .don-ico .ico { width: 16px; height: 16px; flex: none; stroke: currentColor; fill: none;
+  stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.don-ico .ico { width: 18px; height: 18px; }
+.boton.apoyo .ico { color: var(--lima); }
+@media (max-width: 900px) {
+  .apoyo-wrap { margin-left: auto; }
+  .donate { margin-left: 0; }
+  .don-pop { position: fixed; top: 64px; left: 16px; right: 16px; width: auto; }
+}

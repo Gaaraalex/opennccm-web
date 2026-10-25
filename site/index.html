@@ -63,7 +63,13 @@
       <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
       GitHub <span class="version-pill" data-version>v1.7.0</span>
     </a>
-    <a class="donate" href="https://ko-fi.com/opennccm" target="_blank" rel="noopener" aria-label="Apoya OpenNCCM: donar en Ko-fi (se abre en otra pestaña)" title="Apoya OpenNCCM"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.4-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.6-9 9-9 9z"/></svg><span class="dt"><b>Apoya OpenNCCM</b><small>Libre y gratis gracias a ti</small></span><span class="dbtn">Donar</span></a>
+    <span class="apoyo-wrap"><button type="button" class="donate" aria-haspopup="true" aria-expanded="false" aria-controls="don-pop" aria-label="Apoya OpenNCCM: formas de donar" title="Apoya OpenNCCM"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.4-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.6-9 9-9 9z"/></svg><span class="dt"><b>Apoya OpenNCCM</b><small>Libre y gratis gracias a ti</small></span><span class="dbtn">Donar</span></button>
+      <div class="don-pop" id="don-pop" hidden>
+        <div class="don-cab"><span class="don-ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.4-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.6-9 9-9 9z"/></svg></span><b>Apoya OpenNCCM</b></div>
+        <p>OpenNCCM es libre y gratis (GPL-3.0). Tu aporte paga horas de desarrollo y pruebas con equipos reales. Se abre en una pestaña nueva.</p>
+        <a class="dopt" href="https://github.com/sponsors/Gaaraalex" target="_blank" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 19c-4 1.5-4-2-6-2.5M15 21v-3.5a3 3 0 0 0-1-2.5c3 0 6-1.5 6-6.5a5 5 0 0 0-1.5-3.5 4.5 4.5 0 0 0-.1-3.5s-1.2-.3-3.9 1.5a13 13 0 0 0-7 0C4.8 1.7 3.6 2 3.6 2a4.5 4.5 0 0 0-.1 3.5A5 5 0 0 0 2 9c0 5 3 6.5 6 6.5a3 3 0 0 0-1 2.5V21"/></svg>GitHub Sponsors<span class="grow"></span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></a>
+        <a class="dopt" href="https://ko-fi.com/opennccm" target="_blank" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/></svg>Invitar un café (Ko-fi)<span class="grow"></span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></a>
+      </div></span>
     <button class="abrir-menu" id="abrir-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
@@ -275,7 +281,8 @@
     <div class="acciones">
       <a class="boton primario" href="#instalar">Instalar ahora</a>
       <a class="boton" href="https://github.com/Gaaraalex/opennccm">Código en GitHub</a>
-      <a class="boton apoyo" href="https://ko-fi.com/opennccm" target="_blank" rel="noopener" title="Donación opcional en Ko-fi"><span aria-hidden="true">♥</span> Apoya OpenNCCM</a>
+      <a class="boton apoyo" href="https://github.com/sponsors/Gaaraalex" target="_blank" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 19c-4 1.5-4-2-6-2.5M15 21v-3.5a3 3 0 0 0-1-2.5c3 0 6-1.5 6-6.5a5 5 0 0 0-1.5-3.5 4.5 4.5 0 0 0-.1-3.5s-1.2-.3-3.9 1.5a13 13 0 0 0-7 0C4.8 1.7 3.6 2 3.6 2a4.5 4.5 0 0 0-.1 3.5A5 5 0 0 0 2 9c0 5 3 6.5 6 6.5a3 3 0 0 0-1 2.5V21"/></svg>GitHub Sponsors</a>
+      <a class="boton apoyo" href="https://ko-fi.com/opennccm" target="_blank" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/></svg>Invitar un café (Ko-fi)</a>
     </div>
   </div>
 </section>
@@ -291,7 +298,8 @@
       <a href="https://github.com/Gaaraalex/opennccm/issues">Informar un problema</a>
       <a href="https://github.com/Gaaraalex/opennccm/blob/main/SECURITY.md">Seguridad</a>
       <a href="https://github.com/Gaaraalex/opennccm/blob/main/LICENSE">Licencia GPL-3.0</a>
-      <a class="apoyo" href="https://ko-fi.com/opennccm" target="_blank" rel="noopener">♥ Apoya OpenNCCM</a>
+      <a class="apoyo" href="https://github.com/sponsors/Gaaraalex" target="_blank" rel="noopener noreferrer">♥ GitHub Sponsors</a>
+      <a class="apoyo" href="https://ko-fi.com/opennccm" target="_blank" rel="noopener noreferrer">☕ Invitar un café (Ko-fi)</a>
     </nav>
   </div>
 </footer>
