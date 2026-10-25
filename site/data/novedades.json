@@ -1,7 +1,18 @@
 {
- "generado": "2026-10-25T14:07:03.307Z",
- "ultima": "2.6.0",
+ "generado": "2026-10-25T16:38:29.026Z",
+ "ultima": "2.7.0",
  "versiones": [
+  {
+   "version": "2.7.0",
+   "destacados": [
+    "Ubuntu Server y Debian",
+    "Respaldos",
+    "Consola SSH",
+    "Clave de la API de NVD desde Ajustes"
+   ],
+   "html": "<ul><li><strong>Ubuntu Server y Debian</strong> (Ubuntu 26.04, 24.04 y 22.04 LTS; Debian 12 y 13): perfil nuevo «Ubuntu Server / Debian».<ul><li>Respalda solo configuración en texto: red (netplan o interfaces), DNS, SSH, cuentas y sudo, repositorios, paquetes instalados a mano, servicios, cron, hora (chrony en 26.04 o timesyncd) y cortafuegos (ufw, iptables, nftables).</li><li>Nunca copia contraseñas, claves privadas, certificados ni datos; las contraseñas de wifi de netplan salen como «***». Un respaldo ocupa unos 20–60 KB.</li><li>Sin contadores de paquetes ni versiones de cada paquete, para que los respaldos no detecten cambios falsos.</li><li>Con sudo sin contraseña respalda también lo que solo lee root; sin él, el resto.</li><li>Paquete de cumplimiento «Ubuntu / Debian · Seguridad básica» (8 reglas, sin corrección automática).</li><li>Actualizaciones disponibles: avisa de la nueva LTS o estable y de la fecha de fin de soporte de la instalada.</li></ul></li><li><strong>Respaldos</strong>: la fecha, la hora y el tiempo encendido que algunos equipos escriben en comentarios (por ejemplo «! System Up Time» de Ubiquiti) ya no cuentan como cambio, en ninguna marca. El primer respaldo tras actualizar tampoco ve un cambio falso por las versiones guardadas antes.</li><li><strong>Consola SSH</strong>: si no puede abrirse, explica el motivo (sesión caducada, sin permiso, dirección distinta por un proxy, o conexión bloqueada) en lugar de mostrar solo «[Desconectado]».</li><li><strong>Clave de la API de NVD desde Ajustes</strong> (sección «Vulnerabilidades (NVD)»): se guarda cifrada y acelera la búsqueda de CVE y de versiones de firmware. La de opennccm.env sigue teniendo prioridad.</li><li><strong>Apoya OpenNCCM</strong>: GitHub Sponsors junto a Ko-fi, y botón «Sponsor» en el repositorio de GitHub.</li></ul>",
+   "fecha": "2026-10-25T16:36:46Z"
+  },
   {
    "version": "2.6.0",
    "destacados": [
