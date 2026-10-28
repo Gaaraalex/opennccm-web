@@ -1,7 +1,29 @@
 {
- "generado": "2026-10-25T16:38:29.026Z",
- "ultima": "2.7.0",
+ "generado": "2026-10-28T01:41:16.868Z",
+ "ultima": "2.9.0",
  "versiones": [
+  {
+   "version": "2.9.0",
+   "destacados": [
+    "Reversión revisada a fondo, plataforma por plataforma",
+    "MikroTik",
+    "Ubiquiti",
+    "MikroTik SwitchOS"
+   ],
+   "html": "<ul><li><strong>Reversión revisada a fondo, plataforma por plataforma.</strong> Un error al restaurar puede dejar un equipo sin servicio, así que se rehízo con estas reglas:<ul><li><strong>MikroTik RouterOS</strong> tiene reversión propia. Compara las exportaciones elemento a elemento:</li><li><code>set</code> con su selector para lo que cambió;</li><li><code>add</code> para lo que falta, con las reglas de firewall en su posición (<code>place-before</code>);</li><li><code>remove [ find where … ]</code> para lo que sobra, en orden inverso. Se aplica en <strong>modo seguro</strong>: si un comando falla o se corta la conexión, RouterOS deshace todo lo aplicado. Probado en <strong>RouterOS 7.25, 7.23.8 y 6.49.23 reales</strong> en la CI, que comprueba que el equipo queda exactamente como antes y que un fallo a mitad se deshace.</li><li><strong>Extreme EXOS</strong> y <strong>VOSS / Fabric Engine</strong> tienen reversión propia (<code>delete vlan</code>, <code>configure vlan … delete ports</code>, <code>vlan members remove</code>…). Borran las VLAN que sobran antes de mover sus puertos.</li><li><strong>Junos</strong> se aplica con <code>commit confirmed 5</code>: si el cambio corta el acceso, el equipo vuelve solo a la configuración anterior.</li><li><strong>Nunca se toca la dirección por la que OpenNCCM gestiona el equipo.</strong> Lo que no se puede deshacer con seguridad se muestra en la solicitud como «Revisar a mano», y esa solicitud no se ejecuta sola.</li><li><strong>WatchGuard, FortiGate, UniFi, airOS, SwitchOS y las demás plataformas sin reversión segura por comandos</strong> ya no vuelven a aplicar la configuración entera, que se detenía en la primera línea existente y dejaba el equipo a medias. OpenNCCM explica cómo restaurar con la herramienta del fabricante. La reversión automática no se puede activar en ellas.</li></ul></li><li><strong>MikroTik</strong>:<ul><li>con <strong>RouterOS 7.25</strong> los respaldos fallaban, porque al iniciar sesión pide el tamaño del terminal; ya funcionan;</li><li>las respuestas de error de RouterOS («no such item», «invalid value»…) ya se reconocen; antes se daban por buenas.</li></ul></li><li><strong>Ubiquiti</strong>:<ul><li>nuevos perfiles: <strong>airMAX M</strong> (M2, M5 con airOS 6), <strong>airMAX AC</strong> (airOS 8), <strong>airFiber</strong> (AF5XHD, AF60, AF24HD, AF5X), <strong>AP UniFi</strong> y <strong>USG</strong>;</li><li>el respaldo de airOS, airFiber y UniFi AP es <code>/tmp/system.cfg</code>, con la versión y el modelo.</li></ul></li><li><strong>MikroTik SwitchOS</strong> (SwOS y SwOS Lite): respaldo por HTTP (<code>backup.swb</code>) con el modelo, la versión y la serie.</li><li><strong>Importar equipos desde Zabbix</strong> (6.0 a 7.x):<ul><li>trae el nombre, la IP, la descripción y el inventario, y deduce la plataforma;</li><li>sin credencial, los equipos quedan desactivados hasta asignársela;</li><li>probado con Zabbix 6.0, 7.0 y 7.4 reales.</li></ul></li><li><strong>Dispositivos</strong>: paginador de 15, 25, 50 o 100, que respeta el filtro al escribir.</li><li><strong>Línea base</strong>: «Difiere de la base» ya no se queda para siempre cuando la base guardaba la hora o el tiempo encendido.</li><li><strong>Ficha del equipo</strong>:<ul><li>el menú «…» ya no corta «Marcar la última versión como línea base»;</li><li>si algunas versiones se cifraron con otra clave (<code>secret.key</code>), la ficha se abre con un aviso en lugar de dar un error, y los respaldos siguen funcionando.</li></ul></li><li><strong>Menú lateral</strong>: se quitó el buscador bajo el logo, que se cortaba. El de la barra superior hace lo mismo con Ctrl K.</li><li>131 plataformas.</li></ul>",
+   "fecha": "2026-10-28T01:40:01Z"
+  },
+  {
+   "version": "2.8.0",
+   "destacados": [
+    "Ajustes › Vulnerabilidades (NVD)",
+    "Cumplimiento",
+    "Nueva tarea",
+    "Consola SSH"
+   ],
+   "html": "<ul><li><strong>Ajustes › Vulnerabilidades (NVD)</strong> aparece en el menú lateral de Ajustes. En la 2.7.0 la sección existía pero no se podía abrir desde el menú.</li><li><strong>Cumplimiento</strong>: si una regla la incumplen varios equipos, un solo botón <strong>«Corregir en N equipos…»</strong> abre la lista de equipos con casillas (todos marcados) y crea una solicitud de corrección por cada uno. Antes había un botón por equipo. La lista de nombres de la regla muestra los cinco primeros y «y N más».</li><li><strong>Nueva tarea</strong>: el nombre propuesto corresponde a la acción elegida («Auditoría semanal», «Búsqueda semanal de CVE», «Copia de recuperación semanal»…) y cambia con ella mientras no se haya escrito otro. Antes se quedaba «Respaldo nocturno».</li><li><strong>Consola SSH</strong>: si el equipo tiene una credencial asignada y el inicio automático está desactivado, la consola lo avisa. A los administradores les enlaza a Ajustes para activarlo. El valor por defecto no cambia.</li><li><strong>Instalador</strong>: las listas de opciones («Acceso HTTPS», «Base de datos»…) ya no se salen del recuadro: se dimensionan según la opción más larga y los textos caben en una consola de 80 columnas.</li><li><strong><code>opennccm status</code></strong> ya no muestra «(?)» junto a la carpeta del código en las instalaciones hechas desde el paquete publicado.</li></ul>",
+   "fecha": "2026-10-26T16:45:43Z"
+  },
   {
    "version": "2.7.0",
    "destacados": [
