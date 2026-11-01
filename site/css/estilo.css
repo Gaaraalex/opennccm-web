@@ -336,3 +336,44 @@ button.donate { font: inherit; cursor: pointer; }
   .donate { margin-left: 0; }
   .don-pop { position: fixed; top: 64px; left: 16px; right: 16px; width: auto; }
 }
+
+/* Botón animado «Soporte profesional» (estilo Aurora): enlace a comunidad.opennccm.com/soporte */
+.btn-soporte { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 15px; border-radius: 999px; color: #fff; font: 600 13.5px Inter, var(--font), sans-serif; white-space: nowrap; flex: none;
+  background: linear-gradient(110deg, #2563eb, #7c3aed, #0891b2, #2563eb); background-size: 300% 100%;
+  animation: aurora 6s linear infinite; box-shadow: 0 8px 24px -12px #7c3aed; transition: transform .2s cubic-bezier(.2, .8, .2, 1), box-shadow .2s; }
+.btn-soporte svg { width: 16px; height: 16px; flex: none; }
+.btn-soporte:hover { color: #fff; text-decoration: none; transform: translateY(-1px); box-shadow: 0 10px 30px -8px #7c3aed; animation-play-state: paused; }
+.btn-soporte:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+@keyframes aurora { to { background-position: 300% 0; } }
+@media (prefers-reduced-motion: reduce) { .btn-soporte { animation: none; transition: none; } }
+@media (max-width: 900px) {
+  .btn-soporte { height: 34px; padding: 0 11px; font-size: 12.5px; gap: 6px; margin-left: auto; }
+  .btn-soporte svg { width: 14px; height: 14px; }
+  .apoyo-wrap { margin-left: 0; }
+}
+
+/* Para que quepa el botón de soporte: menú más junto, «Novedades» solo en el pie e idioma corto */
+.menu a .idioma-corto { display: none; }
+@media (min-width: 901px) and (max-width: 1600px) {
+  .barra .contenedor { gap: 16px; }
+  .menu { gap: 14px; }
+  .menu a { font-size: 14px; }
+  .menu a.menu-novedades { display: none; }
+  .menu a.idioma .idioma-largo { display: none; }
+  .menu a.idioma .idioma-corto { display: inline; }
+}
+@media (max-width: 900px) { .menu a.idioma .idioma-corto { display: none; } }
+/* Móvil estrecho: el logotipo sin el nombre deja sitio al botón completo, a «Donar» y al menú */
+@media (max-width: 440px) {
+  .barra .contenedor { gap: 8px; }
+  .barra .marca b { display: none; }
+}
+@media (min-width: 901px) and (max-width: 1600px) {
+  .barra .contenedor { gap: 12px; }
+  .menu { gap: 12px; }
+}
+/* Hasta 1320 px «Apoya OpenNCCM / Donar» queda como icono (igual que ya pasaba por debajo de 1180 px) */
+@media (min-width: 901px) and (max-width: 1320px) {
+  .donate { width: 36px; height: 36px; padding: 0; justify-content: center; }
+  .donate .dt, .donate .dbtn { display: none; }
+}
