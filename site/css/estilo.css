@@ -354,7 +354,7 @@ button.donate { font: inherit; cursor: pointer; }
 
 /* Para que quepa el botón de soporte: menú más junto, «Novedades» solo en el pie e idioma corto */
 .menu a .idioma-corto { display: none; }
-@media (min-width: 901px) and (max-width: 1600px) {
+@media (min-width: 901px) {
   .barra .contenedor { gap: 16px; }
   .menu { gap: 14px; }
   .menu a { font-size: 14px; }
@@ -368,7 +368,7 @@ button.donate { font: inherit; cursor: pointer; }
   .barra .contenedor { gap: 8px; }
   .barra .marca b { display: none; }
 }
-@media (min-width: 901px) and (max-width: 1600px) {
+@media (min-width: 901px) {
   .barra .contenedor { gap: 12px; }
   .menu { gap: 12px; }
 }
@@ -377,3 +377,5 @@ button.donate { font: inherit; cursor: pointer; }
   .donate { width: 36px; height: 36px; padding: 0; justify-content: center; }
   .donate .dt, .donate .dbtn { display: none; }
 }
+/* Desde 901 px, sin límite: «Apoya OpenNCCM» + Donar en una línea, sin el subtítulo */
+@media (min-width: 901px) { .donate .dt small { display: none; } .donate { height: 36px; } }
