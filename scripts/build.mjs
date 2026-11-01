@@ -81,7 +81,13 @@ async function fechasDeVersiones() {
   } catch { return {}; }
 }
 
-const versiones = parsearChangelog(await leer("CHANGELOG.md"));
+// De la más nueva a la más vieja por número (2.18.0 va antes que 2.9.0), sin depender del orden del CHANGELOG.
+const numeros = (v) => v.split(".").map(Number);
+const versiones = parsearChangelog(await leer("CHANGELOG.md")).sort((a, b) => {
+  const [x, y] = [numeros(a.version), numeros(b.version)];
+  for (let i = 0; i < 3; i++) if (x[i] !== y[i]) return y[i] - x[i];
+  return 0;
+});
 const fechas = await fechasDeVersiones();
 for (const v of versiones) v.fecha = fechas[v.version] || null;
 
