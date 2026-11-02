@@ -86,25 +86,24 @@ fetch(`${BASE}data/novedades.json`, { cache: "no-cache" }).then((r) => r.json())
 });
 
 // ---------- Historial de versiones (novedades.html / changelog.html) ----------
-// Cada punto del CHANGELOG lleva un tipo. Con la etiqueta al principio («- [nuevo] **Título:** …», también [mejora],
-// [arreglo] y [seguridad]) se usa esa; sin etiqueta, se deduce de las palabras del texto.
+// Cada punto del CHANGELOG puede llevar su tipo al principio: «- [nuevo] **Título:** …» (también [mejora], [arreglo]
+// y [seguridad]). Sin etiquetas no se adivina: no hay filtros ni insignias, y «Lo más importante» solo muestra puntos [nuevo].
 const TIPOS = ["nuevo", "mejora", "arreglo", "seguridad"];
 function tipoDe(li) {
-  const t = li.textContent.trim();
-  const m = t.match(/^\[(nuevo|mejora|arreglo|seguridad)\]\s*/i);
-  if (m) {
-    const w = document.createTreeWalker(li, NodeFilter.SHOW_TEXT);
-    for (let n = w.nextNode(); n; n = w.nextNode()) if (n.nodeValue.includes(m[0].trim())) { n.nodeValue = n.nodeValue.replace(/\[(nuevo|mejora|arreglo|seguridad)\]\s*/i, ""); break; }
-    return m[1].toLowerCase();
-  }
-  const x = t.toLowerCase();
-  // Seguridad = fallos de seguridad de OpenNCCM (no las funciones de CVE o cumplimiento, que son «nuevo» o «mejora»).
-  if (/(\bxss\b|csrf|inyecci[oó]n|fuerza bruta|escalada de privilegios|fallo de seguridad|problema de seguridad|cabeceras de seguridad|secuestro de sesi)/.test(x)) return "seguridad";
-  if (/(arregl|corrig|un fallo|\bfallaba|ya no se|ya no queda|no funcionaba|se quedaba|dejaba de|antes se|en la \d+\.\d+\.\d+ un)/.test(x)) return "arreglo";
-  if (/^(nuevo|nueva)\b|\b(nuevo|nueva) (botón|página|pestaña|opción|menú)|ahora se puede|^botón/.test(x)) return "nuevo";
-  return "mejora";
+  const m = li.textContent.trim().match(/^\[(nuevo|mejora|arreglo|seguridad)\]\s*/i);
+  if (!m) return null;
+  const w = document.createTreeWalker(li, NodeFilter.SHOW_TEXT);
+  for (let n = w.nextNode(); n; n = w.nextNode()) if (n.nodeValue.includes(m[0].trim())) { n.nodeValue = n.nodeValue.replace(/\[(nuevo|mejora|arreglo|seguridad)\]\s*/i, ""); break; }
+  return m[1].toLowerCase();
 }
-const prioridad = (tipos) => (tipos.includes("seguridad") ? "seguridad" : tipos.includes("nuevo") ? "nuevo" : tipos.includes("arreglo") ? "arreglo" : "mejora");
+const prioridad = (tipos) => ["seguridad", "nuevo", "arreglo", "mejora"].find((t) => tipos.includes(t)) || null;
+// Resumen de una frase completa (nunca cortada), con mayúscula inicial.
+const frase = (p) => {
+  const resto = p.texto.slice(p.titulo.length).replace(/^[\s:.,;—-]+/, "");
+  const m = resto.match(/^[\s\S]*?[.!?](?=\s|$)/);
+  const r = (m ? m[0] : resto).trim();
+  return r.charAt(0).toUpperCase() + r.slice(1);
+};
 const fechaCorta = (iso) => iso ? new Date(iso).toLocaleDateString(LANG, { day: "numeric", month: "short" }) : "";
 
 function historial(versiones, hist) {
@@ -120,38 +119,42 @@ function historial(versiones, hist) {
     return { ...v, html: doc.innerHTML, puntos, tipo: prioridad(puntos.map((p) => p.tipo)) };
   });
 
-  // Lo más importante del último mes: el primer punto de cada versión de los últimos 30 días (las novedades primero).
+  const etiquetado = lista.some((v) => v.puntos.some((p) => p.tipo));
+  const filtros = $(".nov-tipos");
+  if (filtros) filtros.hidden = !etiquetado;
+
+  // Lo más importante del último mes: puntos [nuevo] de las versiones de los últimos 30 días, uno por versión.
   const mes = $("#nov-mes");
   if (mes) {
     const ref = lista[0]?.fecha ? new Date(lista[0].fecha).getTime() : Date.now();
-    const candidatos = lista.filter((v) => v.fecha && ref - new Date(v.fecha).getTime() < 30 * 864e5)
-      .flatMap((v) => v.puntos.slice(0, 2).map((p, i) => ({ ...p, v, orden: (p.tipo === "nuevo" ? 0 : p.tipo === "seguridad" ? 1 : 2) * 10 + i })));
     const elegidos = [];
-    for (const c of candidatos.sort((a, b) => a.orden - b.orden)) if (elegidos.length < 3 && !elegidos.some((e) => e.v === c.v)) elegidos.push(c);
-    for (const c of candidatos) if (elegidos.length < 3 && !elegidos.includes(c)) elegidos.push(c);
+    for (const v of lista.filter((v) => v.fecha && ref - new Date(v.fecha).getTime() < 30 * 864e5)) {
+      const p = v.puntos.find((x) => x.tipo === "nuevo");
+      if (p && elegidos.length < 3) elegidos.push({ ...p, v });
+    }
     mes.innerHTML = elegidos.map((c) => `
       <a class="nov-tarjeta" href="#v${c.v.version}">
-        <span class="nov-chip ${c.tipo}">${T.tipos[c.tipo]}</span>
+        <span class="nov-chip nuevo">${T.tipos.nuevo}</span>
         <b></b><p></p>
         <span class="nov-ver">${T.version} ${c.v.version} · ${fecha(c.v.fecha)}</span>
       </a>`).join("");
     [...mes.children].forEach((a, i) => {
       a.querySelector("b").textContent = elegidos[i].titulo;
-      a.querySelector("p").textContent = elegidos[i].texto.slice(elegidos[i].titulo.length).replace(/^[\s:.,]+/, "").slice(0, 150) + "…";
+      a.querySelector("p").textContent = frase(elegidos[i]);
     });
-    if (!elegidos.length) mes.closest(".nov-mes").hidden = true;
+    mes.closest(".nov-mes").hidden = !elegidos.length;
   }
 
   // Índice lateral: versión, fecha y punto de color.
-  $("#indice").innerHTML = lista.map((v) => `<a href="#v${v.version}" data-v="${v.version}"><i class="punto ${v.tipo}" title="${T.tipos[v.tipo]}"></i><span>${v.version}</span><small>${fechaCorta(v.fecha)}</small></a>`).join("");
+  $("#indice").innerHTML = lista.map((v) => `<a href="#v${v.version}" data-v="${v.version}"><i class="punto ${v.tipo || "sin"}"${v.tipo ? ` title="${T.tipos[v.tipo]}"` : ""}></i><span>${v.version}</span><small>${fechaCorta(v.fecha)}</small></a>`).join("");
 
   // Versiones: 3 puntos y los detalles técnicos plegados; las anteriores a las 6 últimas, en una línea.
   hist.innerHTML = lista.map((v, i) => {
-    const tres = v.puntos.slice(0, 3).map((p) => `<li data-tipo="${p.tipo}"><span class="nov-chip ${p.tipo}">${T.tipos[p.tipo]}</span> <span class="t"></span></li>`).join("");
+    const tres = v.puntos.slice(0, 3).map((p) => `<li data-tipo="${p.tipo || ""}">${p.tipo ? `<span class="nov-chip ${p.tipo}">${T.tipos[p.tipo]}</span> ` : ""}<span class="t"></span></li>`).join("");
     const cuerpo = `
         <ul class="nov-tres">${tres || `<li>${T.mejoras}</li>`}</ul>
         <details class="nov-detalles"><summary>${T.detalles.replace("{n}", v.puntos.length || 1)}</summary><div class="cuerpo" lang="es">${v.html}</div></details>`;
-    const cab = `<span class="num"><i class="punto ${v.tipo}"></i>${v.version}</span> <small>${fecha(v.fecha)}</small>`;
+    const cab = `<span class="num"><i class="punto ${v.tipo || "sin"}"></i>${v.version}</span> <small>${fecha(v.fecha)}</small>`;
     return i < 6
       ? `<article id="v${v.version}" data-v="${v.version}"><h2>${cab}<a class="gh" href="https://github.com/Gaaraalex/opennccm/releases/tag/v${v.version}">${T.github}</a></h2>${cuerpo}</article>`
       : `<details class="nov-vieja" id="v${v.version}" data-v="${v.version}"><summary>${cab}<span class="linea"></span></summary><article>${cuerpo}<p><a class="gh" href="https://github.com/Gaaraalex/opennccm/releases/tag/v${v.version}">${T.github}</a></p></article></details>`;
