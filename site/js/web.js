@@ -148,6 +148,17 @@ function historial(versiones, hist) {
   // Índice lateral: versión, fecha y punto de color.
   $("#indice").innerHTML = lista.map((v) => `<a href="#v${v.version}" data-v="${v.version}"><i class="punto ${v.tipo || "sin"}"${v.tipo ? ` title="${T.tipos[v.tipo]}"` : ""}></i><span>${v.version}</span><small>${fechaCorta(v.fecha)}</small></a>`).join("");
 
+  // En el móvil el índice es un desplegable cerrado («Ir a una versión ▾ (n)»); al elegir una versión se cierra.
+  const desplegable = $(".nov-indice");
+  if (desplegable) {
+    const movil = matchMedia("(max-width: 900px)");
+    const ajustar = () => { desplegable.open = !movil.matches; };
+    ajustar();
+    movil.addEventListener("change", ajustar);
+    desplegable.querySelector("[data-n]").textContent = `▾ (${lista.length})`;
+    $("#indice").addEventListener("click", (e) => { if (e.target.closest("a") && movil.matches) desplegable.open = false; });
+  }
+
   // Versiones: 3 puntos y los detalles técnicos plegados; las anteriores a las 6 últimas, en una línea.
   hist.innerHTML = lista.map((v, i) => {
     const tres = v.puntos.slice(0, 3).map((p) => `<li data-tipo="${p.tipo || ""}">${p.tipo ? `<span class="nov-chip ${p.tipo}">${T.tipos[p.tipo]}</span> ` : ""}<span class="t"></span></li>`).join("");

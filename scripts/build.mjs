@@ -66,7 +66,7 @@ function parsearChangelog(md) {
     else if (actual) actual.lineas.push(l);
   }
   return versiones.map((v) => {
-    const titulos = v.lineas.map((l) => l.match(/^- \*\*(.+?)\*\*/)).filter(Boolean).map((m) => m[1].replace(/[:.]$/, ""));
+    const titulos = v.lineas.map((l) => l.match(/^- (?:\[(?:nuevo|mejora|arreglo|seguridad)\] )?\*\*(.+?)\*\*/i)).filter(Boolean).map((m) => m[1].replace(/[:.]$/, ""));
     return { version: v.version, destacados: titulos.slice(0, 4), html: bloque(v.lineas) };
   });
 }
