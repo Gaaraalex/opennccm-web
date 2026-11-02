@@ -512,3 +512,6 @@ footer .contenedor.pie-cols { display: grid; grid-template-columns: 1.4fr repeat
 .menu a { white-space: nowrap; }
 @media (min-width: 1601px) { .barra .contenedor { max-width: 1560px; } }
 .gh-barra, .gh-barra .gh-txt { white-space: nowrap; }
+.punto.sin { background: #4b5a78; }
+.nov-tipos[hidden] { display: none; }
+@media (max-width: 900px) { .barra.abierta .menu .menu-cuenta a.boton { display: flex; } }
