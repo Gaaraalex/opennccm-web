@@ -379,3 +379,136 @@ button.donate { font: inherit; cursor: pointer; }
 }
 /* Desde 901 px, sin límite: «Apoya OpenNCCM» + Donar en una línea, sin el subtítulo */
 @media (min-width: 901px) { .donate .dt small { display: none; } .donate { height: 36px; } }
+
+/* ---------- UX-1: portada, funciones en 4 grupos, ayuda 3 × 2 y pie en 4 columnas ---------- */
+.portada .contenedor { grid-template-columns: minmax(0, 600px) minmax(0, 1fr); }
+.escena.unica .captura { width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .8); }
+.cifras ul { grid-template-columns: repeat(5, 1fr); }
+
+.icono-linea { width: 44px; height: 44px; border-radius: 11px; display: grid; place-items: center; background: var(--blue-soft); color: #8bb8ff; margin-bottom: 16px; flex: none; }
+.icono-linea svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.grupos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.grupo { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.grupo h3 { font-size: 19px; font-weight: 600; margin-bottom: 10px; }
+.grupo ul { margin: 0 0 18px; padding-left: 18px; color: var(--muted); font-size: 15px; display: grid; gap: 8px; }
+.grupo .ver-docs { margin-top: auto; color: #7fb0ff; font-size: 14px; font-weight: 500; }
+details.todas { margin-top: 28px; }
+details.todas > summary { list-style: none; text-align: center; cursor: pointer; }
+details.todas > summary::-webkit-details-marker { display: none; }
+details.todas[open] > summary { margin-bottom: 24px; }
+details.todas[open] > summary .boton::after { content: " ▴"; }
+
+.docs.tres { grid-template-columns: repeat(3, 1fr); }
+.doc .icono-linea { margin-bottom: 8px; }
+
+footer .contenedor.pie-cols { display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); gap: 28px; align-items: start; }
+.pie-cols nav { display: flex; flex-direction: column; gap: 8px; }
+.pie-cols h2 { font: 600 12px var(--font); text-transform: uppercase; letter-spacing: .08em; color: var(--text); margin: 0 0 4px; }
+.pie-marca p { margin: 10px 0; max-width: 260px; }
+@media (max-width: 1000px) {
+  .grupos { grid-template-columns: 1fr 1fr; }
+  .docs.tres { grid-template-columns: 1fr 1fr; }
+  footer .contenedor.pie-cols { grid-template-columns: repeat(2, 1fr); }
+  .pie-marca { grid-column: 1 / -1; }
+}
+@media (max-width: 760px) {
+  .grupos, .docs.tres { grid-template-columns: 1fr; }
+  .cifras ul { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---------- Cabecera: cuenta de la comunidad (Entrar / menú) y «Apoya» como corazón ---------- */
+@media (min-width: 901px) {
+  .donate { width: 36px; height: 36px; padding: 0; justify-content: center; }
+  .donate .dt, .donate .dbtn { display: none; }
+}
+.menu-cuenta { display: none; }
+.occ-avatar-movil { display: none; }
+.occ-cuenta { display: flex; align-items: center; gap: 8px; flex: none; }
+.occ-entrar, .occ-crear { display: inline-flex; align-items: center; height: 36px; padding: 0 13px; border-radius: 10px; font: 600 14px var(--font); white-space: nowrap; }
+.occ-entrar { border: 1px solid var(--border); color: var(--text); }
+.occ-entrar:hover { border-color: #34466f; text-decoration: none; }
+.occ-crear { background: var(--blue); color: #fff; }
+.occ-crear:hover { text-decoration: none; filter: brightness(1.1); }
+.occ-menu { position: relative; }
+.occ-menu > summary { list-style: none; display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.occ-menu > summary::-webkit-details-marker { display: none; }
+.occ-quien { font: 600 14px var(--font); color: var(--text); white-space: nowrap; }
+.occ-flecha { color: var(--muted); }
+.occ-plan { padding: 2px 8px; border-radius: 99px; background: rgba(198, 244, 50, .15); color: var(--lima); font: 600 11.5px var(--font); }
+.occ-avatar { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--blue); color: #fff; font: 700 13px var(--font); }
+.occ-num { display: inline-block; min-width: 18px; height: 18px; margin-left: 6px; padding: 0 5px; border-radius: 9px; background: #fbbf24; color: #1a1205; font: 700 11px/18px var(--font); text-align: center; vertical-align: 1px; }
+.occ-lista { position: absolute; right: 0; top: 46px; z-index: 60; min-width: 250px; display: grid; gap: 2px; padding: 10px; border-radius: 14px; border: 1px solid var(--border); background: var(--surface); box-shadow: 0 20px 50px -12px rgba(0, 0, 0, .7); }
+.occ-lista a, .occ-lista button { display: block; padding: 8px 10px; border-radius: 8px; color: var(--text); font: 500 14px var(--font); text-align: left; background: none; border: 0; width: 100%; cursor: pointer; }
+.occ-lista a:hover, .occ-lista button:hover { background: var(--surface-2); text-decoration: none; }
+.occ-lista form { margin: 4px 0 0; padding-top: 4px; border-top: 1px solid var(--border); }
+.occ-yo { margin: 0 0 4px; padding: 2px 10px 8px; border-bottom: 1px solid var(--border); display: grid; }
+.occ-yo small { color: var(--muted); font-size: 12px; }
+.occ-nota { display: block; color: #fbbf24; font-size: 12px; }
+@media (max-width: 900px) {
+  .occ-cuenta { display: none; }
+  .occ-avatar-movil { display: block; }
+  .occ-avatar-movil .occ-quien, .occ-avatar-movil .occ-plan { display: none; }
+  .occ-avatar-movil .occ-lista { position: fixed; top: 64px; left: 16px; right: 16px; min-width: 0; }
+  .barra.abierta .menu .menu-cuenta { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 14px 0 4px; }
+  .barra.abierta .menu .menu-cuenta[hidden] { display: none; }
+  .barra.abierta .menu .menu-cuenta a { border: 1px solid var(--border); border-radius: 10px; padding: 10px; justify-content: center; text-align: center; font-size: 15px; }
+  .barra.abierta .menu .menu-cuenta a.primario { border-color: var(--blue); }
+}
+
+/* ---------- UX-2: Novedades ---------- */
+.oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.punto { display: inline-block; width: 9px; height: 9px; border-radius: 50%; flex: none; background: var(--blue); }
+.punto.nuevo { background: var(--green); }
+.punto.arreglo { background: var(--amber); }
+.punto.seguridad { background: #ef4444; }
+.nov-chip { display: inline-block; padding: 1px 8px; border-radius: 99px; font: 600 11.5px var(--font); background: var(--blue-soft); color: #8bb8ff; vertical-align: 1px; }
+.nov-chip.nuevo { background: rgba(34, 197, 94, .14); color: #6ee7a0; }
+.nov-chip.arreglo { background: rgba(245, 158, 11, .14); color: #fbbf24; }
+.nov-chip.seguridad { background: rgba(239, 68, 68, .15); color: #fca5a5; }
+.nov-mes { margin: 0; padding: 36px 0 8px; }
+.nov-mes h2 { font-size: 22px; margin-bottom: 14px; }
+.nov-mes-tarjetas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.nov-tarjeta { display: flex; flex-direction: column; gap: 8px; padding: 20px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface); color: var(--text); }
+.nov-tarjeta:hover { text-decoration: none; border-color: #34466f; }
+.nov-tarjeta .nov-chip { align-self: flex-start; }
+.nov-tarjeta b { font-size: 17px; }
+.nov-tarjeta p { margin: 0; color: var(--muted); font-size: 14.5px; }
+.nov-ver { margin-top: auto; color: #7fb0ff; font-size: 13px; }
+.nov-filtros { position: sticky; top: 64px; z-index: 20; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin-top: 28px; padding: 12px 0; background: var(--bg); border-bottom: 1px solid var(--border); }
+.nov-tipos { display: flex; flex-wrap: wrap; gap: 6px; }
+.nov-tipos button { display: inline-flex; align-items: center; gap: 7px; font: 500 14px var(--font); color: var(--muted); background: transparent; border: 1px solid var(--border); padding: 6px 13px; border-radius: 99px; cursor: pointer; }
+.nov-tipos button:hover { color: var(--text); }
+.nov-tipos button[aria-pressed="true"] { background: var(--blue-soft); border-color: var(--blue); color: var(--text); }
+.nov-buscar input { width: 280px; max-width: 100%; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font: 14px var(--font); }
+.historial { padding-top: 32px; }
+.historial nav a { display: flex; align-items: center; gap: 8px; }
+.historial nav a small { margin-left: auto; font: 400 12px var(--font); color: var(--muted); }
+.historial nav a[hidden] { display: none; }
+.historial article h2 .num { display: inline-flex; align-items: center; gap: 10px; }
+.historial article h2 .punto { width: 11px; height: 11px; }
+.nov-tres { margin: 14px 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 16px; }
+.nov-tres li.atenuado { opacity: .4; }
+.nov-detalles { margin-top: 6px; }
+.nov-detalles > summary { cursor: pointer; color: #7fb0ff; font-size: 14.5px; font-weight: 500; }
+.nov-detalles[open] > summary { margin-bottom: 10px; }
+.nov-vieja { border-bottom: 1px solid var(--border); padding: 14px 0; }
+.nov-vieja > summary { cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; list-style: none; }
+.nov-vieja > summary::-webkit-details-marker { display: none; }
+.nov-vieja > summary .num { display: inline-flex; align-items: center; gap: 8px; font: 700 18px var(--display); color: var(--text); }
+.nov-vieja > summary small { color: var(--muted); font-size: 13px; }
+.nov-vieja > summary .linea { color: var(--muted); font-size: 14px; flex: 1 1 300px; min-width: 0; }
+.nov-vieja > article { border: 0; margin: 10px 0 0; padding: 0; }
+.nov-vieja[hidden], .historial article[hidden] { display: none; }
+.nov-vacio { color: var(--muted); }
+@media (max-width: 1000px) { .nov-mes-tarjetas { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .nov-filtros { position: static; } .nov-buscar, .nov-buscar input { width: 100%; } }
+/* Entre 901 y 1600 px el botón de GitHub queda como icono (la versión está en el aviso de la portada) */
+@media (min-width: 901px) and (max-width: 1600px) {
+  .gh-barra { padding: 0; width: 36px; height: 36px; justify-content: center; }
+  .gh-barra .gh-txt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}
+/* Los enlaces del menú nunca se parten en dos líneas; desde 1601 px la barra usa más ancho */
+.menu { flex: none; }
+.menu a { white-space: nowrap; }
+@media (min-width: 1601px) { .barra .contenedor { max-width: 1560px; } }
+.gh-barra, .gh-barra .gh-txt { white-space: nowrap; }
