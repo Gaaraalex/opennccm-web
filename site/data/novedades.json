@@ -1,7 +1,18 @@
 {
- "generado": "2026-11-03T01:14:28.466Z",
- "ultima": "2.19.0",
+ "generado": "2026-11-03T03:14:02.234Z",
+ "ultima": "2.20.0",
  "versiones": [
+  {
+   "version": "2.20.0",
+   "destacados": [
+    "Imagen completa de WatchGuard (.fxi)",
+    "Receptor FTP temporal",
+    "Respaldos de WatchGuard en la ficha",
+    "Puertos de WatchGuard con su enlace"
+   ],
+   "html": "<ul><li>[nuevo] <strong>Imagen completa de WatchGuard (.fxi):</strong> OpenNCCM puede guardar la imagen completa y cifrada de un Firebox, para recuperar ese mismo equipo tras un fallo. Además de la configuración trae los certificados con sus claves, la feature key, las contraseñas y la información propia del equipo. Se configura en la nueva pestaña <strong>Respaldos</strong> de la ficha con una credencial de administrador del Firebox y una clave de cifrado; se crea semanal, diaria o a mano, y se guardan las N últimas. «Probar conexión» comprueba que el Firebox llega a OpenNCCM sin crear ninguna imagen.</li><li>[nuevo] <strong>Receptor FTP temporal:</strong> Fireware solo entrega la imagen por FTP, así que OpenNCCM abre un receptor propio solo mientras dura el respaldo. Acepta únicamente la IP del Firebox, con usuario y contraseña de un solo uso, y se cierra al recibir el archivo o a los 5 minutos (puerto 2121 y pasivos 50000–50010, configurables). Si el servidor usa ufw, abre esos puertos solo para el Firebox y los cierra al terminar; la regla se quita sola a los 6 minutos aunque el servicio se detenga. En el Firebox no queda ninguna copia.</li><li>[nuevo] <strong>Respaldos de WatchGuard en la ficha:</strong> La pestaña Respaldos explica qué guarda la configuración (XML) y qué la imagen (.fxi), y cuándo usar cada una. Cada archivo se descarga en su formato (<code>EQUIPO_v48.xml</code>, <code>EQUIPO_img-12.fxi</code>), nunca en .zip; «Descargar .xml y .fxi» baja los dos. La clave de la imagen nunca va dentro de un archivo: los administradores la ven en «Cómo restaurar» y queda en Auditoría quién la vio.</li><li>[mejora] <strong>Puertos de WatchGuard con su enlace:</strong> La ficha de un WatchGuard muestra qué puertos tienen enlace y a qué velocidad, delante y detrás. OpenNCCM lo lee en cada respaldo con <code>show status-report</code> (solo lectura; basta un usuario Device Monitor) y guarda solo la sección de los puertos. Atrás, el puerto con enlace sale en verde; delante se enciende la luz de su velocidad, amarilla para 1000 y verde para 10/100, como en el Firebox T40.</li><li>[mejora] <strong>Si la imagen falla:</strong> La pantalla muestra el mensaje exacto del Firebox y qué revisar (cortafuegos, dirección, política del Firebox o credencial sin permiso). Al segundo fallo seguido se abre la alarma «Imagen .fxi sin crear»; el respaldo XML no se ve afectado.</li></ul>",
+   "fecha": "2026-11-03T03:12:21Z"
+  },
   {
    "version": "2.19.0",
    "destacados": [
