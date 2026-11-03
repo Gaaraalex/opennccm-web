@@ -529,3 +529,4 @@ footer .contenedor.pie-cols { display: grid; grid-template-columns: 1.4fr repeat
   .nov-indice > summary::-webkit-details-marker { display: none; }
   .historial .nov-indice nav { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; max-height: 50vh; overflow-y: auto; padding: 0 8px 10px; }
 }
+.nov-tipos button[hidden] { display: none; }

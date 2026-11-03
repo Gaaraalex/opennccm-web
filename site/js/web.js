@@ -121,7 +121,11 @@ function historial(versiones, hist) {
 
   const etiquetado = lista.some((v) => v.puntos.some((p) => p.tipo));
   const filtros = $(".nov-tipos");
-  if (filtros) filtros.hidden = !etiquetado;
+  if (filtros) {
+    filtros.hidden = !etiquetado;
+    // Sin puntos de un tipo (p. ej. aún no hubo arreglos de seguridad), su filtro no se muestra.
+    $$("[data-tipo]", filtros).forEach((b) => { if (b.dataset.tipo) b.hidden = !lista.some((v) => v.puntos.some((p) => p.tipo === b.dataset.tipo)); });
+  }
 
   // Lo más importante del último mes: puntos [nuevo] de las versiones de los últimos 30 días, uno por versión.
   const mes = $("#nov-mes");
