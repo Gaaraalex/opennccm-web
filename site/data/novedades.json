@@ -1,7 +1,18 @@
 {
- "generado": "2026-11-03T20:12:25.044Z",
- "ultima": "2.22.0",
+ "generado": "2026-11-04T01:10:34.318Z",
+ "ultima": "2.23.0",
  "versiones": [
+  {
+   "version": "2.23.0",
+   "destacados": [
+    "Panel del asistente más amplio",
+    "Elegir el modelo de IA",
+    "El asistente solo habla de la red",
+    "Asistente en Operar › Consola"
+   ],
+   "html": "<ul><li>[mejora] <strong>Panel del asistente más amplio:</strong> En la consola, las preguntas sugeridas ya no se salen del panel, se pliegan solas al preguntar y se vuelven a abrir con «✦ Preguntas sugeridas». El botón ⓘ oculta la parte de arriba (proveedor, contexto y aviso) para dejar más espacio a las respuestas, y la pregunta se escribe al fondo del panel.</li><li>[nuevo] <strong>Elegir el modelo de IA:</strong> En Ajustes › Asistente IA el modelo se elige en un desplegable con los de la cuenta del proveedor. Cada usuario puede cambiarlo a su gusto desde el chat de la barra superior o desde el panel de la consola, sin cambiar el de los demás.</li><li>[mejora] <strong>El asistente solo habla de la red:</strong> Responde sobre redes y seguridad, los equipos que OpenNCCM admite y administra y el uso de OpenNCCM. A una pregunta ajena contesta en una frase que solo ayuda con la red.</li><li>[arreglo] <strong>Asistente en Operar › Consola:</strong> Cada sesión abierta tiene su botón «✦ Asistente», como la consola de la ficha del equipo.</li><li>[nuevo] <strong>El asistente ayuda en todo el sistema:</strong> El chat consulta las vulnerabilidades, la Base de conocimiento, los configlets, las tareas programadas y los tipos de equipo admitidos. Prepara configlets y scripts, borradores de casos de la Base de conocimiento, tareas, correcciones de vulnerabilidades como solicitud de cambio y migraciones desde otro sistema (el CSV para importar equipos). Todo se hace solo cuando el usuario confirma.</li></ul>",
+   "fecha": "2026-11-04T01:06:30Z"
+  },
   {
    "version": "2.22.0",
    "destacados": [
