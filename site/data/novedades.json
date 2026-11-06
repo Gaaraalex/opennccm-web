@@ -1,7 +1,40 @@
 {
- "generado": "2026-11-04T23:47:50.151Z",
- "ultima": "2.24.0",
+ "generado": "2026-11-06T14:08:15.001Z",
+ "ultima": "2.27.0",
  "versiones": [
+  {
+   "version": "2.27.0",
+   "destacados": [
+    "Distribución del mapa",
+    "Nodos",
+    "IP de los MikroTik encontrados por RoMON",
+    "Receta VOSS para cambiar el usuario y la contraseña"
+   ],
+   "html": "<ul><li>[nuevo] <strong>Distribución del mapa:</strong> Un menú sobre el mapa con 10 formas de ordenar los equipos: libre, escalonada hacia abajo o hacia la derecha, radial, por sitio, por función, circular, árbol plegable, sobre un plano y «Mi distribución», que se guarda arrastrando equipos, solo para ti o para todo el equipo.</li><li>[nuevo] <strong>Nodos:</strong> Agrupa los equipos por lugar (sucursal, torre, edificio). Se crean en Administración › Nodos o al crear o editar un equipo, como las credenciales, y el filtro «Nodo» del mapa muestra solo los equipos de ese nodo, o todos.</li><li>[mejora] <strong>IP de los MikroTik encontrados por RoMON:</strong> El mapa toma su IP de los vecinos MNDP/LLDP o de las tablas ARP, así ya no salen solo con la MAC.</li><li>[nuevo] <strong>Receta VOSS para cambiar el usuario y la contraseña:</strong> En Recetas, «Cambiar el usuario y la contraseña de la CLI» de Extreme VOSS / Fabric Engine, con admin por defecto, y guarda la configuración al terminar.</li><li>[mejora] <strong>Puertos y parte de atrás en Extreme VOSS:</strong> La ficha de los VSP / Fabric Engine muestra qué puertos tienen enlace y las fuentes y los ventiladores.</li><li>[mejora] <strong>Extreme VOSS en el mapa y en syslog:</strong> El mapa lee sus vecinos LLDP, y syslog detecta sus cambios de configuración y cada «save config».</li><li>[arreglo] <strong>Cambios que renombran el equipo:</strong> Una solicitud que cambiaba el nombre del equipo (y su prompt) se quedaba esperando y no guardaba la configuración. Ahora se relee el prompt antes de salir y guardar.</li><li>[arreglo] <strong>Referencia y tabla MAC en VOSS:</strong> La configuración de referencia respeta los bloques que terminan en «exit», y la búsqueda de MAC reconoce los puertos «Port-1/2».</li><li>[arreglo] <strong>Equipos del mapa marcados como perdidos:</strong> Un equipo de OpenNCCM ya no se pinta entero como nuevo o perdido: el enlace perdido se dibuja aparte, en su puerto.</li></ul>",
+   "fecha": "2026-11-06T14:05:04Z"
+  },
+  {
+   "version": "2.26.0",
+   "destacados": [
+    "Buscar una MAC o una IP",
+    "Aviso de vecino nuevo o perdido",
+    "Configuración de referencia por modelo",
+    "Comandos favoritos en la consola"
+   ],
+   "html": "<ul><li>[nuevo] <strong>Buscar una MAC o una IP:</strong> Escribe una MAC o una IP en el buscador de la barra superior y OpenNCCM dice en qué switch y en qué puerto está conectado, con su VLAN, la descripción del puerto, cuándo se vio y el camino. Las tablas MAC y ARP se leen en cada respaldo y queda un historial para «Visto por última vez»; «Leer las tablas ahora» las vuelve a leer.</li><li>[nuevo] <strong>Aviso de vecino nuevo o perdido:</strong> Una alarma cuando aparece un equipo que antes no estaba o deja de verse uno que sí estaba (LLDP, CDP, MNDP y RoMON), con su ficha, «Es conocido» y «Preparar shutdown del puerto». El perdido avisa recién tras 2 lecturas y la alarma se cierra sola si vuelve. El mapa resalta los cambios de las últimas 24 h. Se activa en Ajustes › Mapa de la red.</li><li>[nuevo] <strong>Configuración de referencia por modelo:</strong> Elige el equipo bien configurado y compara contra él a los demás del mismo modelo, por sección (AAA, SNMP, NTP, VLAN…), sin nombre, IP de gestión, descripciones ni claves. Se pueden ignorar líneas y preparar una solicitud de cambio para igualarlos, que siempre pasa por aprobación.</li><li>[nuevo] <strong>Comandos favoritos en la consola:</strong> Una barra sobre la terminal con tus comandos de verificación por tipo de equipo; un clic los escribe y envía. Los que cambian la configuración se escriben sin enviar. Se ordenan, editan y, los administradores, comparten con todo el equipo.</li><li>[arreglo] <strong>RoMON en redes reales:</strong> El mapa no encontraba los MikroTik por RoMON en RouterOS 7 (la salida real trae la marca «A», el camino en varias líneas y la identidad solo con «proplist»). Ahora salen todos, también en RouterOS 6.</li><li>[arreglo] <strong>La «ñ» de los nombres MikroTik:</strong> Los nombres como «Cabañas» ya no salen como «CabaF1as», ni en el mapa ni por RoMON.</li><li>[mejora] <strong>«Compartir» en Operar › Consola:</strong> Es un ícono, igual que en la consola de la ficha del equipo.</li></ul>",
+   "fecha": "2026-11-05T18:16:43Z"
+  },
+  {
+   "version": "2.25.0",
+   "destacados": [
+    "MikroTik por RoMON en el mapa",
+    "«Reconocer todas» con cientos de alarmas",
+    "Mapa del documento de la red ordenado",
+    "Documento de la red más prolijo"
+   ],
+   "html": "<ul><li>[nuevo] <strong>MikroTik por RoMON en el mapa:</strong> Con «Buscar también los MikroTik por RoMON» (Ajustes › Mapa de la red, desactivado de fábrica), el respaldo de cada MikroTik con RoMON activado encuentra los que están a varios saltos o sin dirección IP, y el mapa los une con una línea punteada. RoMON no dice por qué puerto se conectan, así que no cuentan para el análisis de impacto ni para Puertos sin uso.</li><li>[arreglo] <strong>«Reconocer todas» con cientos de alarmas:</strong> Con muchas alarmas aparecía «OpenNCCM se está reiniciando» y después «Method Not Allowed». Ahora responde enseguida, «Deshacer» funciona con miles y una recarga vuelve a la lista. Las alarmas críticas de CVE se reconocen sin pedir un caso de la Base de conocimiento: se resuelven al actualizar el firmware.</li><li>[mejora] <strong>Mapa del documento de la red ordenado:</strong> Cada grupo de equipos enlazados se arma por niveles, los grupos van uno al lado del otro y los equipos sin enlaces al final, en una grilla: ya no se apilan ni se encima nada.</li><li>[mejora] <strong>Documento de la red más prolijo:</strong> Cada título va en la misma página que su tabla, todas las tablas tienen el mismo ancho, la columna «Sitio» solo sale si hay más de uno y Cumplimiento avisa si todavía no se auditó. El logo se sube con un botón propio, se ve en la portada de la vista previa y se puede quitar.</li><li>[mejora] <strong>Impacto y puertos más claros:</strong> La frase dice «quedan aislados 3 equipos y otros 2 de otras ubicaciones pierden la conexión», «Aprobar» se ve claramente desactivado hasta marcar «Leí el impacto», Puertos sin uso nunca muestra más días de los que hay datos y los textos usan el singular cuando es uno.</li></ul>",
+   "fecha": "2026-11-05T01:49:18Z"
+  },
   {
    "version": "2.24.0",
    "destacados": [
