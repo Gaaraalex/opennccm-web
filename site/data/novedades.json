@@ -1,7 +1,18 @@
 {
- "generado": "2026-11-06T14:08:15.001Z",
- "ultima": "2.27.0",
+ "generado": "2026-11-07T00:46:05.399Z",
+ "ultima": "2.28.0",
  "versiones": [
+  {
+   "version": "2.28.0",
+   "destacados": [
+    "Logos de marca",
+    "Distribuciones del mapa más legibles",
+    "Nodos más fáciles de usar",
+    "Tipo de equipo en el mapa"
+   ],
+   "html": "<ul><li>[nuevo] <strong>Logos de marca:</strong> Cada equipo muestra el logo de su marca (73 marcas, los 131 tipos de equipo) en Dispositivos, la ficha, el mapa, la consola, la búsqueda Ctrl K y las demás pantallas. Dispositivos tiene un filtro «Marca» y una fila de chips con cuántos equipos hay de cada una.</li><li>[mejora] <strong>Distribuciones del mapa más legibles:</strong> Cada distribución usa todo el mapa y los nombres nunca quedan por debajo de 11 px. Ninguna línea cruza los nombres. Por sitio pone el equipo central al medio, Por función parte las columnas largas, el árbol plegable encuadra la rama que se abre y la bandeja «Sin ubicación» baja con la rueda. Debajo del mapa, una franja explica la distribución elegida y la leyenda se pliega.</li><li>[mejora] <strong>Nodos más fáciles de usar:</strong> Filtro «Nodo» y «Asignar al nodo» en Dispositivos, enlace a los equipos de cada nodo, Editar y Borrar a la vista, y un aviso propio para el nodo sin equipos. En el mapa, los vecinos de otros nodos salen atenuados con el nombre de su nodo.</li><li>[mejora] <strong>Tipo de equipo en el mapa:</strong> Las antenas MikroTik (RB911, SXT, LHG…) y los MikroTik con Wi-Fi activo salen como inalámbricos, y el administrador puede corregir el tipo de un equipo a mano.</li><li>[arreglo] <strong>Filtro de nodos del mapa:</strong> Con un nodo elegido, los equipos de otros nodos salían como vecinos «que no están en OpenNCCM».</li></ul>",
+   "fecha": "2026-11-06T23:47:58Z"
+  },
   {
    "version": "2.27.0",
    "destacados": [
