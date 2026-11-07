@@ -1,7 +1,18 @@
 {
- "generado": "2026-11-07T05:10:39.204Z",
- "ultima": "2.29.0",
+ "generado": "2026-11-07T14:59:07.323Z",
+ "ultima": "2.30.0",
  "versiones": [
+  {
+   "version": "2.30.0",
+   "destacados": [
+    "Recetas para todos los equipos",
+    "Recetas por equipo y por tarea",
+    "Configlets y scripts en columnas",
+    "Vista previa de «Ejecutar» un configlet"
+   ],
+   "html": "<ul><li>[nuevo] <strong>Recetas para todos los equipos:</strong> 758 recetas, con al menos 10 para cada tipo de equipo con línea de comandos (131 de 133), entre ellos Sophos, Cisco SD-WAN, Brocade FC, Ciena, Calix, Ericsson, Nokia ISAM, D-Link, Hirschmann, Yamaha, Eltex, Teldat, AudioCodes, ScreenOS, Hillstone, WatchGuard y Prisma SD-WAN.</li><li>[mejora] <strong>Recetas por equipo y por tarea:</strong> La pestaña Recetas tiene tres columnas: tus plataformas y todas las marcas, sus recetas agrupadas por categoría y el detalle. «Por tarea» muestra en qué plataformas hay receta para lo que quieres hacer, y la búsqueda agrupa por plataforma y dice dónde está la palabra.</li><li>[mejora] <strong>Configlets y scripts en columnas:</strong> Primero lo que puedes ejecutar en tus equipos, con la plataforma en palabras, el sello «Verificada», el aviso con el foro y GitHub y la casilla obligatoria antes de crear la solicitud.</li><li>[arreglo] <strong>Vista previa de «Ejecutar» un configlet:</strong> Mostraba trozos de código en lugar de los comandos; ahora muestra los valores escritos y no deja enviar con una variable vacía.</li><li>[mejora] <strong>Aviso al aplicar comandos:</strong> Las correcciones de Cumplimiento, Multi-equipo y el asistente IA llevan el aviso «Revisa los comandos antes de usarlos en producción», y las correcciones y Multi-equipo piden marcar la casilla antes de crear la solicitud. «Corregir N» deja elegir qué correcciones aplicar.</li><li>[mejora] <strong>Comprobar ahora lee la versión del equipo:</strong> En la pestaña Firmware, «Comprobar ahora» le pregunta al equipo su versión instalada antes de buscar la nueva, sin tener que respaldarlo.</li><li>[nuevo] <strong>Comprobación después de actualizar el firmware:</strong> Cuando el equipo vuelve, OpenNCCM lee su versión y avisa si quedó en la nueva; si no, guarda en Eventos y en la solicitud el final del registro del equipo con el motivo.</li><li>[arreglo] <strong>Serie de los Ubiquiti:</strong> Los airMAX, airFiber y AP UniFi muestran su número de serie (la MAC, como hace Ubiquiti), y se reconoce la serie escrita como «S/N».</li></ul>",
+   "fecha": "2026-11-07T14:55:26Z"
+  },
   {
    "version": "2.29.0",
    "destacados": [
