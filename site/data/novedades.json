@@ -1,7 +1,18 @@
 {
- "generado": "2026-11-07T14:59:07.323Z",
- "ultima": "2.30.0",
+ "generado": "2026-11-08T01:47:33.445Z",
+ "ultima": "2.31.0",
  "versiones": [
+  {
+   "version": "2.31.0",
+   "destacados": [
+    "Respaldar todos sin «Internal Server Error»",
+    "Buscar dentro de una versión",
+    "Puertos de los MikroTik con muchos SFP",
+    "Número de serie de los MikroTik"
+   ],
+   "html": "<ul><li>[arreglo] <strong>Respaldar todos sin «Internal Server Error»:</strong> Con varios respaldos a la vez, uno podía terminar en error («database is locked») y su versión no se guardaba. Ahora cada respaldo espera su turno para escribir.</li><li>[nuevo] <strong>Buscar dentro de una versión:</strong> Al ver una copia, «Buscar en esta versión» resalta las líneas que tienen el texto o la IP y salta entre ellas con Intro.</li><li>[arreglo] <strong>Puertos de los MikroTik con muchos SFP:</strong> El frente del CRS326-24S+2Q+ (y de los CRS con muchos SFP) muestra los SFP+ en dos filas y cada QSFP+ dividido en sus 4 interfaces («1-1» a «2-4») en su propio grupo.</li><li>[arreglo] <strong>Número de serie de los MikroTik:</strong> Se lee del RouterBOARD («/system routerboard print») o de la cabecera del /export; antes salía vacío.</li><li>[arreglo] <strong>Comprobar ahora, aunque otro equipo se esté comprobando:</strong> La comprobación de firmware de un equipo ya no se rechaza con «Ya hay una comprobación en curso».</li><li>[mejora] <strong>Reintento al entrar por SSH:</strong> Un fallo pasajero de un equipo ocupado («No existing session») se reintenta; una contraseña mala no.</li><li>[arreglo] <strong>MikroTik RouterOS:</strong> «Volver a esta versión» restaura los elementos que el /export de RouterOS 7 parte en dos líneas; restaurar en otro equipo e igualar a la referencia ya no fallan por el «keymat-provider» que RouterOS 7 crea solo; en RouterOS 6, un comando que muestra su avance («/certificate sign») ya no hace perder el siguiente.</li><li>[arreglo] <strong>Recetas de RouterOS:</strong> «Aplicar como solicitud» ya no quita pasos que cambian algo, «Limitar SSH y Winbox» sirve en RouterOS 6 y 7, y hay una receta de NTP para RouterOS 6.</li><li>[arreglo] <strong>Extreme EXOS:</strong> El syslog detecta los cambios hechos por fuera; restaurar una copia funciona (las líneas de punto de partida de EXOS y las cuentas que ya existen); igualar a la referencia ya no copia el nombre ni la contraseña del switch; buscar una MAC encuentra los puertos de EXOS; y las recetas de contraseña y SNMP usan la sintaxis de EXOS 33.</li><li>[mejora] <strong>Recetas y correcciones verificadas en el laboratorio:</strong> 25 recetas (MikroTik RouterOS 6.49.23 y 7.24.5, Extreme EXOS 33.6.1.14) y 8 correcciones de cumplimiento de MikroTik llevan el sello «Verificada», tras 3 rondas seguidas sin fallos.</li></ul>",
+   "fecha": "2026-11-08T01:43:35Z"
+  },
   {
    "version": "2.30.0",
    "destacados": [
