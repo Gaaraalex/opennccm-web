@@ -1,7 +1,18 @@
 {
- "generado": "2026-11-08T13:45:54.346Z",
- "ultima": "2.32.0",
+ "generado": "2026-11-09T23:27:33.401Z",
+ "ultima": "2.33.0",
  "versiones": [
+  {
+   "version": "2.33.0",
+   "destacados": [
+    "«Ejecutar» espera la casilla del aviso",
+    "Configlets",
+    "WatchGuard: imagen .fxi",
+    "WatchGuard: sesiones de administración"
+   ],
+   "html": "<ul><li>[mejora] <strong>«Ejecutar» espera la casilla del aviso:</strong> En Configlets, Recetas y el asistente, los botones que ejecutan o aplican comandos quedan desactivados hasta marcar «Leí el aviso…». Con marcarla una vez basta para toda la página.</li><li>[arreglo] <strong>Configlets:</strong> El panel de la derecha muestra los comandos completos; antes quedaban en una franja de una línea con su propia barra y no se veía qué se iba a ejecutar.</li><li>[arreglo] <strong>WatchGuard: imagen .fxi:</strong> Crear la imagen y «Probar» fallaban siempre («SimpleNamespace is not mapped»). Ahora la imagen se crea, se recibe cifrada, se guarda con su clave y se borra del Firebox.</li><li>[arreglo] <strong>WatchGuard: sesiones de administración:</strong> Los respaldos, las solicitudes y la consola web cierran su sesión de Fireware. Antes se acumulaban en el Firebox y una solicitud que fallaba dejaba el modo de edición tomado: el Firebox rechazaba la imagen .fxi y los cambios de otros administradores.</li><li>[arreglo] <strong>Ubiquiti EdgeSwitch (FastPath):</strong> Las solicitudes crean VLAN («vlan database»); el nombre, el SSH y la web van en el modo privilegiado; «Volver a esta versión» quita el syslog, la comunidad SNMP y devuelve los puertos a la VLAN 1; el syslog del switch avisa de cada cambio; y las recetas de nombre, SSH/HTTPS, SNMP, SNTP y syslog funcionan en 1.9.3.</li><li>[arreglo] <strong>Cumplimiento de Ubiquiti EdgeSwitch:</strong> «SSH habilitado», «Sin HTTP sin cifrar» y «SNTP» daban el resultado al revés (el switch no muestra lo que viene de fábrica). Se corrigen solas en las instalaciones que ya las tienen.</li><li>[arreglo] <strong>Solicitudes de cambio:</strong> Un rechazo del equipo que llegaba tarde ya no se pierde (la solicitud terminaba «bien» sin aplicarse); un fallo pasajero del saludo SSH se reintenta.</li><li>[arreglo] <strong>Extreme VOSS, Juniper, Cisco y OPNsense:</strong> VOSS restaura el RADIUS y el banner que sobran; Junos lee la serie de «show chassis hardware», ignora el aviso de «commit confirmed» en LLDP y nunca toca fxp0 al restaurar; Cisco no copia el certificado, la licencia ni el client-id de otro equipo y lee los puertos de los routers IOS-XE; OPNsense 26.7 conecta bien; y un equipo que se ve a sí mismo por un lazo ya no cuenta como vecino.</li><li>[mejora] <strong>Recetas verificadas en el laboratorio:</strong> 26 recetas más llevan el sello «Verificada» tras 3 rondas seguidas sin fallos: Extreme VOSS 9.3, Juniper Junos 14.1 (vMX) y Ubiquiti EdgeSwitch 1.9.3 (equipo físico).</li></ul>",
+   "fecha": "2026-11-09T20:47:29Z"
+  },
   {
    "version": "2.32.0",
    "destacados": [
