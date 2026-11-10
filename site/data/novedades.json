@@ -1,7 +1,18 @@
 {
- "generado": "2026-11-09T23:27:33.401Z",
- "ultima": "2.33.0",
+ "generado": "2026-11-10T01:53:52.811Z",
+ "ultima": "2.34.0",
  "versiones": [
+  {
+   "version": "2.34.0",
+   "destacados": [
+    "pfSense y OPNsense por separado",
+    "Consola de pfSense y OPNsense",
+    "Recetas de WatchGuard Fireware",
+    "Recetas verificadas"
+   ],
+   "html": "<ul><li>[mejora] <strong>pfSense y OPNsense por separado:</strong> Cada uno es su propia plataforma en la consola, en Recetas y en Configlets, con sus recetas y sus rutas (config.xml, versión y registro). Los favoritos de consola que ya tenía se copian a los dos.</li><li>[arreglo] <strong>Consola de pfSense y OPNsense:</strong> <code>ifconfig</code>, <code>sockstat</code>, <code>tail</code>, <code>ls</code>, <code>arp -an</code> y otros comandos de consulta se bloqueaban como si cambiaran la configuración (en Multi-equipo y en solo lectura). Ahora son consultas; reiniciar, apagar pf o borrar archivos se avisan como cortes de servicio.</li><li>[arreglo] <strong>Recetas de WatchGuard Fireware:</strong> Probadas en un Firebox T40 real. El nombre del equipo usaba un submodo que no existe, «show log» y «show connection» daban error, «show system usage» no existe y el ping no terminaba nunca. La receta de NTP avisa del máximo de 3 servidores.</li><li>[mejora] <strong>Recetas verificadas:</strong> 23 recetas más con el sello «Verificada» tras 3 rondas seguidas sin fallos: OPNsense 26.7 (11) y WatchGuard Fireware 12.8.1 en un equipo físico (12).</li><li>[nuevo] <strong>50 configlets y scripts nuevos:</strong> Diez para cada una de estas plataformas: MikroTik RouterOS, Extreme EXOS, Extreme VOSS / Fabric Engine, Ubiquiti EdgeSwitch y WatchGuard Fireware. Llegan también a las instalaciones que ya existen, una sola vez: si borra uno, no vuelve. Salen «Sin verificar» hasta que se prueben.</li></ul>",
+   "fecha": "2026-11-10T01:42:45Z"
+  },
   {
    "version": "2.33.0",
    "destacados": [
