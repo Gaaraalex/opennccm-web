@@ -1,7 +1,18 @@
 {
- "generado": "2026-11-10T01:53:52.811Z",
- "ultima": "2.34.0",
+ "generado": "2026-11-11T01:02:08.568Z",
+ "ultima": "2.35.0",
  "versiones": [
+  {
+   "version": "2.35.0",
+   "destacados": [
+    "Equipos retirados",
+    "Equipo desactivado = aislado",
+    "Activar y desactivar en lote",
+    "Credenciales"
+   ],
+   "html": "<ul><li>[nuevo] <strong>Equipos retirados:</strong> Un equipo dañado, reemplazado o dado de baja se retira en lugar de borrarlo (ficha › ⋯ › Retirar o reemplazar). Se renombra «NOMBRE (n)», queda sin IP, aislado y fuera de todo lo activo, con todo su historial para auditarlo, y se busca por su nombre e IP originales. En el mismo paso se puede dar de alta el reemplazo con sus datos y comparar sus respaldos. Se ven en Dispositivos › Retirados y se pueden reincorporar.</li><li>[mejora] <strong>Equipo desactivado = aislado:</strong> OpenNCCM ya no se conecta con un equipo desactivado por ninguna vía (respaldos, consola, SFTP, Multi-equipo, recetas, solicitudes, firmware, imagen .fxi, API). La ficha lo dice y ofrece «Activar».</li><li>[nuevo] <strong>Activar y desactivar en lote:</strong> En Dispositivos, al marcar varios equipos (solo administradores).</li><li>[arreglo] <strong>Credenciales:</strong> «Guardar» al editar una credencial no hacía nada; tampoco al editar un grupo, una política o una ficha de ciclo de vida en el panel lateral. Había que borrarla y crearla de nuevo.</li><li>[mejora] <strong>ArubaOS (S2500 y controladoras):</strong> Sin contraseña de enable prueba la de ingreso y, si no sirve, lo explica en lugar de «Pattern not detected». Lee el modelo, la serie y todos los puertos (en el S2500-48P, 48 de cobre y 4 SFP+) y muestra su parte trasera.</li><li>[nuevo] <strong>ArubaOS: configlets y cumplimiento:</strong> 10 configlets y scripts y el paquete «Aruba ArubaOS · Seguridad básica».</li></ul>",
+   "fecha": "2026-11-11T00:59:20Z"
+  },
   {
    "version": "2.34.0",
    "destacados": [
