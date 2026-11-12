@@ -1,7 +1,18 @@
 {
- "generado": "2026-11-12T15:25:58.881Z",
- "ultima": "2.37.0",
+ "generado": "2026-11-12T23:08:48.345Z",
+ "ultima": "2.38.0",
  "versiones": [
+  {
+   "version": "2.38.0",
+   "destacados": [
+    "Cisco IOS: restaurar con SNMP",
+    "Cisco IOS: guardar tras cambiar de imagen",
+    "Cisco ASA: restaurar una copia",
+    "Cisco ASA: configuración de referencia"
+   ],
+   "html": "<ul><li>[arreglo] <strong>Cisco IOS: restaurar con SNMP:</strong> La reversión ya no escribe «snmp-server chassis-id» sin valor (IOS lo muestra en cuanto hay otra línea de SNMP y no se puede escribir así): la restauración se detenía en «% Incomplete command». Visto en un IOSv 15.6(2)T.</li><li>[arreglo] <strong>Cisco IOS: guardar tras cambiar de imagen:</strong> El primer «write memory» después de cargar otra versión pregunta «Overwrite the previous NVRAM configuration?[confirm]»; ahora se contesta, en lugar de esperar hasta fallar (cambios, recetas y actualización de firmware quedaban sin guardar). Visto en un 7200 y un 3745.</li><li>[arreglo] <strong>Cisco ASA: restaurar una copia:</strong> No se mandan los comentarios «: Serial Number…», «: Hardware…» ni «ASA Version …», y el «no snmp-server location» de fábrica no se niega cuando la copia trae la línea con valor. Visto en un ASAv 9.9.2.</li><li>[arreglo] <strong>Cisco ASA: configuración de referencia:</strong> Los bloques («interface», «object network») van primero, cada uno con su «exit», y después las líneas sueltas que dependen de ellos («mtu puesto …», «route puesto …»); lo que sobra se quita antes de poner lo nuevo (el ASA no acepta un segundo «inspect dns …» sin quitar el que tiene) y la marca «call-home reporting anonymous prompt N» queda como propia del equipo.</li><li>[arreglo] <strong>Bloques de tres niveles:</strong> Restaurar e igualar a la referencia escriben las líneas de tercer nivel entrando en su sub-bloque («policy-map › class › inspect», «router bgp › address-family › network»); antes se escribían en el bloque de arriba y el equipo las rechazaba.</li><li>[arreglo] <strong>Cisco ASA en la consola:</strong> «packet-tracer» cuenta como consulta, y «write erase», «reload», «format» y «configure factory-default» se marcan como corte del servicio.</li><li>[arreglo] <strong>Receta «Activar SSH» en IOS:</strong> Usa una clave RSA de 2048 bits («general-keys modulus 2048»), que existe en todas las versiones; la de 4096 no existe en IOS 12.x y la receta fallaba.</li><li>[mejora] <strong>Recetas verificadas en Cisco IOS / IOS-XE:</strong> Las 10 recetas de IOS quedan con el sello «Verificada» y las versiones en las que pasaron 3 rondas seguidas sin fallos: IOSv 15.6(2)T, Catalyst 8000v 17.6.1a, 7200 15.3(3)XB12, 3745 12.4(25d) (todas menos RADIUS, cuya sintaxis «radius server» no existe en 12.4) y 3620 12.2(26c) (las que no necesitan SSH, HTTPS ni «secret»).</li><li>[mejora] <strong>Recetas verificadas en Cisco ASA:</strong> Las 11 recetas del ASA quedan con el sello «Verificada · ASA 9.9.2» (3 rondas seguidas sin fallos en un ASAv 9.9.2).</li></ul>",
+   "fecha": "2026-11-12T23:04:49Z"
+  },
   {
    "version": "2.37.0",
    "destacados": [
